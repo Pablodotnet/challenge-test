@@ -88,10 +88,12 @@ export const LoginPage = () => {
               </Button>
             </Grid>
           </Grid>
-          <Grid container direction="row" justifyContent="end">
-            <Link component={RouterLink} color="inherit" to="/auth/register">
-              Create account
-            </Link>
+          <Grid container direction="row" justifyContent="flex-end" alignItems="center" spacing={2}>
+            <Grid item>
+              <Link component={RouterLink} color="inherit" to="/auth/register">
+                Create account
+              </Link>
+            </Grid>
           </Grid>
         </Grid>
       </form>
