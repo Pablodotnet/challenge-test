@@ -7,12 +7,12 @@ import { getFirestore } from 'firebase/firestore/lite';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyBT-4Cn3A9M8Opw-Iec3_JlvR2ZCPBZuKk',
-  authDomain: 'challenge-test-6404c.firebaseapp.com',
-  projectId: 'challenge-test-6404c',
-  storageBucket: 'challenge-test-6404c.appspot.com',
-  messagingSenderId: '234826503701',
-  appId: '1:234826503701:web:3d5694f0a8ce906459601c',
+  apiKey: 'AIzaSyCmFWPUpoJkjj0z-p4D1ilSBNHivoKG5Xo',
+  authDomain: 'challenge-test-62b80.firebaseapp.com',
+  projectId: 'challenge-test-62b80',
+  storageBucket: 'challenge-test-62b80.firebasestorage.app',
+  messagingSenderId: '565977897958',
+  appId: '1:565977897958:web:8d91e3f8a183129d5b1427',
 };
 
 // Initialize Firebase
