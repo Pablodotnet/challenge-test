@@ -1,5 +1,5 @@
 import { AddOutlined } from '@mui/icons-material';
-import { TrackerLayout } from '../layout/TrackerLayout';
+import { DashboardLayout } from '../layout/DashboardLayout';
 import { DetailsView, NothingSelectedView } from '../views';
 import { IconButton } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '../../hooks';
@@ -13,7 +13,7 @@ export const TrackerPage = () => {
   const { isSaving, active } = useAppSelector((state) => state.routines);
 
   return (
-    <TrackerLayout>
+    <DashboardLayout>
       {active ? <DetailsView /> : <NothingSelectedView />}
       <IconButton
         disabled={isSaving}
@@ -30,6 +30,6 @@ export const TrackerPage = () => {
       >
         <AddOutlined sx={{ fontSize: 30 }} />
       </IconButton>
-    </TrackerLayout>
+    </DashboardLayout>
   );
 };
