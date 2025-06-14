@@ -1,5 +1,5 @@
 import { Grid, Typography } from '@mui/material';
-import { ToggleTheme } from '../../ui/components/ToggleTheme';
+import { ToggleTheme } from '../../ui';
 
 type AuthLayoutProps = {
   children: JSX.Element | JSX.Element[];

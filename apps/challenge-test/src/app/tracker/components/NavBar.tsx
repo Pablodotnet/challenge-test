@@ -2,7 +2,7 @@ import { LogoutOutlined, MenuOutlined } from '@mui/icons-material';
 import { AppBar, Grid, IconButton, Toolbar, Typography } from '@mui/material';
 import { useAppDispatch } from '../../hooks';
 import { startLogout } from '../../store';
-import { ToggleTheme } from '../../ui/components/ToggleTheme';
+import { ToggleTheme } from '../../ui';
 
 type NavBarProps = {
   drawerWidth: number;
