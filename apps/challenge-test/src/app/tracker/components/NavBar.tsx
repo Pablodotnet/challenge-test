@@ -2,6 +2,7 @@ import { LogoutOutlined, MenuOutlined } from '@mui/icons-material';
 import { AppBar, Grid, IconButton, Toolbar, Typography } from '@mui/material';
 import { useAppDispatch } from '../../hooks';
 import { startLogout } from '../../store';
+import { ToggleTheme } from '../../ui/components/ToggleTheme';
 
 type NavBarProps = {
   drawerWidth: number;
@@ -28,16 +29,19 @@ export const NavBar = ({ drawerWidth = 240 }: NavBarProps) => {
         >
           <MenuOutlined />
         </IconButton>
+        <Grid container direction="row" justifyContent="flex-start">
+          <Typography variant="h6" noWrap>
+            Challenge Test App
+          </Typography>
+        </Grid>
         <Grid
           container
           direction="row"
-          justifyContent="space-between"
+          justifyContent="flex-end"
           alignItems="center"
         >
-          <Typography variant="h6" noWrap component="div">
-            TrackerApp
-          </Typography>
-          <IconButton color="error" onClick={onLogout}>
+          <ToggleTheme></ToggleTheme>
+          <IconButton onClick={onLogout}>
             <LogoutOutlined />
           </IconButton>
         </Grid>
