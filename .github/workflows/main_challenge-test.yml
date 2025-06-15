@@ -23,13 +23,16 @@ jobs:
         with:
           node-version: '20.x'
 
-      - name: yarn install, build
-        run: |
-          yarn install
-          npx nx run challenge-test:build
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
-      - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+      - name: Build Nx app
+        run: npx nx run challenge-test:build
+
+      - name: Zip build output
+        run: |
+          cd dist/apps/challenge-test
+          zip -r ../../../release.zip .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
