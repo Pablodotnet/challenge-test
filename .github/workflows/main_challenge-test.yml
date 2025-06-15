@@ -76,3 +76,7 @@ jobs:
           app-name: 'challenge-test'
           slot-name: 'Production'
           package: deployment
+
+      - name: Restart Azure Web App
+        run: |
+          az webapp restart --name challenge-test --resource-group challenge-test_group-a35b
