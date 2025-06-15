@@ -1,6 +1,8 @@
-import { Box, useMediaQuery, useTheme } from '@mui/material';
+import { Box } from '@mui/material';
 import { useRef, useLayoutEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { NavBar, SideBar } from '../components';
+import { getIsSidebarDisplayed } from '../../store';
 
 type DashboardLayoutProps = {
   children: JSX.Element | JSX.Element[];
@@ -12,8 +14,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   const appBarRef = useRef<HTMLDivElement>(null);
   const [appBarHeight, setAppBarHeight] = useState(64);
 
-  const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up('md')); // true if screen >= md (960px)
+  const displaySidebar = useSelector(getIsSidebarDisplayed);
 
   useLayoutEffect(() => {
     if (appBarRef.current) {
@@ -30,7 +31,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       <NavBar ref={appBarRef} drawerWidth={drawerWidth} />
 
       {/* SideBar */}
-      {isDesktop && <SideBar drawerWidth={drawerWidth} />}
+      {displaySidebar && <SideBar drawerWidth={drawerWidth} />}
 
       {/* Main content */}
       <Box
