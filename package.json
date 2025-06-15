@@ -2,7 +2,9 @@
   "name": "@challenge-test/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "node server.js"
+  },
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",

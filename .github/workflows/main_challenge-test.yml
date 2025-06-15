@@ -29,6 +29,9 @@ jobs:
       - name: Build Nx app
         run: npx nx run challenge-test:build
 
+      - name: Copy server.js into build output
+        run: cp server.js dist/apps/challenge-test/
+
       - name: Zip build output
         run: |
           cd dist/apps/challenge-test
