@@ -1,7 +1,5 @@
 import { Box, Divider, Drawer, IconButton, List, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { useAppSelector } from '../../hooks';
-import { Routine } from '../../types';
-import { SideBarItem } from './SideBarItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { getIsSidebarDisplayed, toggleSidebar } from '../../store';
 import CloseIcon from '@mui/icons-material/Close';
@@ -12,7 +10,6 @@ type SideBarProps = {
 
 export const SideBar = ({ drawerWidth }: SideBarProps) => {
   const { displayName } = useAppSelector((state) => state.auth);
-  const { routines } = useAppSelector((state) => state.routines);
 
   const dispatch = useDispatch();
 
@@ -59,11 +56,7 @@ export const SideBar = ({ drawerWidth }: SideBarProps) => {
           </IconButton>
         </Box>
         <Divider />
-        <List>
-          {routines.map((routine: Routine) => (
-            <SideBarItem key={routine.id} routine={routine} />
-          ))}
-        </List>
+        <List></List>
       </Drawer>
     </Box>
   );
