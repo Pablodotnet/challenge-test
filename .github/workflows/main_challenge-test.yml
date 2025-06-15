@@ -24,6 +24,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Clean Nx and remove old build
+        run: |
+          npx nx reset
+          rm -rf dist/apps/challenge-test
+
       - name: Build Nx app
         run: npx nx run challenge-test:build
 
