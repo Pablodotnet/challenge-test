@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid, Paper, Typography } from '@mui/material';
 import { ToggleTheme } from '../../ui';
 
 type AuthLayoutProps = {
@@ -16,10 +16,8 @@ export const AuthLayout = ({ children, title = '' }: AuthLayoutProps) => {
       justifyContent="center"
       sx={{ minHeight: '100vh', padding: 4 }}
     >
-      <Grid
-        item
-        className="box-shadow"
-        xs={12}
+      <Paper
+        elevation={3}
         sx={{
           width: { xs: '100%', sm: 450 },
           padding: 3,
@@ -35,7 +33,7 @@ export const AuthLayout = ({ children, title = '' }: AuthLayoutProps) => {
           <ToggleTheme></ToggleTheme>
         </Grid>
         {children}
-      </Grid>
+      </Paper>
     </Grid>
   );
 };
