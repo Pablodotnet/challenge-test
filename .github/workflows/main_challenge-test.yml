@@ -37,9 +37,6 @@ jobs:
           cp server.js dist/apps/challenge-test/
           echo "Copied server.js to build output"
 
-      - name: List build directory
-        run: ls -la dist/apps/challenge-test
-
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
@@ -51,14 +48,11 @@ jobs:
     needs: build
     environment:
       name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
       id-token: write
       contents: read
 
     steps:
-      - name: Clean deployment folder
-        run: rm -rf deployment && mkdir -p deployment
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
@@ -67,6 +61,13 @@ jobs:
 
       - name: Show deployment folder contents
         run: ls -la deployment
+
+      - name: Zip deployment folder
+        run: |
+          cd deployment
+          zip -r ../deployment.zip .
+          cd ..
+        shell: bash
 
       - name: Login to Azure
         uses: azure/login@v2
@@ -81,7 +82,7 @@ jobs:
         with:
           app-name: 'challenge-test'
           slot-name: 'Production'
-          package: deployment
+          package: deployment.zip
 
       - name: Restart Azure Web App
         run: |
