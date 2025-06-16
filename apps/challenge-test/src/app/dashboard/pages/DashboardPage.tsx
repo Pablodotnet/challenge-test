@@ -1,11 +1,4 @@
-import {
-  Avatar,
-  Box,
-  CircularProgress,
-  Grid,
-  Paper,
-  Typography,
-} from '@mui/material';
+import { Avatar, Box, Grid, Paper, Skeleton, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { Client } from '../../types';
@@ -37,12 +30,16 @@ export const DashboardPage = () => {
               }}
             >
               {isClientsLoading ? (
-                <CircularProgress />
+                <>
+                  <Skeleton variant="circular" width={80} height={80} />
+                  <Skeleton variant="text" width="60%" height={30} />
+                </>
               ) : (
                 <>
                   <Avatar sx={{ width: 80, height: 80 }} />
                   <Typography variant="h6">
-                    {clients.length} {clients.length === 1 ? 'cliente' : 'clientes'}
+                    {clients.length}{' '}
+                    {clients.length === 1 ? 'cliente' : 'clientes'}
                   </Typography>
                 </>
               )}
@@ -63,12 +60,18 @@ export const DashboardPage = () => {
               }}
             >
               {isConversationsLoading ? (
-                <CircularProgress />
+                <>
+                  <Skeleton variant="circular" width={80} height={80} />
+                  <Skeleton variant="text" width="60%" height={30} />
+                </>
               ) : (
                 <>
                   <Avatar sx={{ width: 80, height: 80 }} />
                   <Typography variant="h6">
-                    {conversations.length} {conversations.length === 1 ? 'conversación' : 'conversaciones'}
+                    {conversations.length}{' '}
+                    {conversations.length === 1
+                      ? 'conversación'
+                      : 'conversaciones'}
                   </Typography>
                 </>
               )}
