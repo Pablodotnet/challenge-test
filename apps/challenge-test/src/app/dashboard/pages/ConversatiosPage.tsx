@@ -57,9 +57,25 @@ export const ConversationsPage = () => {
       <Table sx={{ minWidth: 650 }} aria-label="conversations table">
         <TableHead>
           <TableRow>
-            <TableCell>Client</TableCell>
-            <TableCell>Messages</TableCell>
-            <TableCell>Created At</TableCell>
+            {loading ? (
+              <>
+                <TableCell>
+                  <Skeleton width="80px" />
+                </TableCell>
+                <TableCell>
+                  <Skeleton width="60px" />
+                </TableCell>
+                <TableCell>
+                  <Skeleton width="100px" />
+                </TableCell>
+              </>
+            ) : (
+              <>
+                <TableCell>Client</TableCell>
+                <TableCell>Messages</TableCell>
+                <TableCell>Created At</TableCell>
+              </>
+            )}
           </TableRow>
         </TableHead>
         <TableBody>
