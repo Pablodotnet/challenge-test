@@ -1,0 +1,564 @@
+{
+  "messages": [
+    {
+      "_id": "629f7eb0a45b19829851c58d",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "629f7eb0a45b194cb551c58c",
+        "type": "text",
+        "text": "hola",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "createdAt": "2022-06-07T16:37:04.095Z",
+        "updatedAt": "2022-06-07T16:37:04.095Z",
+        "readAt": "2022-06-07T16:40:23.856Z"
+      },
+      "createdAt": "2022-06-07T16:37:04.169Z"
+    },
+    {
+      "_id": "629f7eb1a45b19300551c593",
+      "type": "Message",
+      "message": {
+        "_id": "629f7eb1a45b196e0151c592",
+        "type": "text",
+        "text": "¡Bienvenido a Barbs Company!\nEn que te puedo ayudar|[Soporte 👩‍💻]|[Ventas 🛍]|[❌ Cancelar]",
+        "user": "61e08a648341c2cb064746bc",
+        "typeUser": "UserSystem",
+        "createdAt": "2022-06-07T16:37:05.870Z",
+        "updatedAt": "2022-06-07T16:37:05.870Z",
+        "deliveredAt": "2022-06-07T16:37:07.000Z",
+        "readAt": "2022-06-07T16:39:14.000Z"
+      },
+      "createdAt": "2022-06-07T16:37:05.946Z",
+      "client": "629e39e8b2d31319081e0650"
+    },
+    {
+      "_id": "629f80f3a45b19aab151c5ac",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "629f80f3a45b19811651c5ab",
+        "type": "text",
+        "text": "sí",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "createdAt": "2022-06-07T16:46:43.903Z",
+        "updatedAt": "2022-06-07T16:46:43.903Z",
+        "readAt": "2022-06-07T16:46:45.333Z"
+      },
+      "createdAt": "2022-06-07T16:46:43.978Z"
+    },
+    {
+      "_id": "629f825ba45b19103251c5b3",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "629f825ba45b195f8651c5b2",
+        "type": "text",
+        "text": "hola",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "createdAt": "2022-06-07T16:52:43.234Z",
+        "updatedAt": "2022-06-07T16:52:43.234Z",
+        "readAt": null
+      },
+      "createdAt": "2022-06-07T16:52:43.310Z"
+    },
+    {
+      "_id": "629f8415a45b19252b51c5e6",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "629f8415a45b196d0551c5e5",
+        "type": "text",
+        "text": "💕",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "createdAt": "2022-06-07T17:00:05.181Z",
+        "updatedAt": "2022-06-07T17:00:05.181Z",
+        "readAt": "2022-06-07T17:00:06.527Z"
+      },
+      "createdAt": "2022-06-07T17:00:05.256Z"
+    },
+    {
+      "_id": "629f845ba45b19900c51c5f8",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "629f845ba45b19f0ff51c5f7",
+        "type": "text",
+        "text": "Soporte 👩‍💻",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "createdAt": "2022-06-07T17:01:15.424Z",
+        "updatedAt": "2022-06-07T17:01:15.424Z",
+        "readAt": "2022-06-07T17:01:22.355Z"
+      },
+      "createdAt": "2022-06-07T17:01:15.498Z"
+    },
+    {
+      "_id": "629fd552120fddff3a9f2c4a",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "629fd552120fdd23db9f2c49",
+        "type": "text",
+        "text": "hola",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "createdAt": "2022-06-07T22:46:42.645Z",
+        "updatedAt": "2022-06-07T22:46:42.645Z",
+        "readAt": "2022-06-07T22:55:28.663Z"
+      },
+      "createdAt": "2022-06-07T22:46:42.728Z"
+    },
+    {
+      "_id": "629fd7611ed1fc2c837e5000",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "629fd7611ed1fc2af17e4fff",
+        "type": "text",
+        "text": "hola",
+        "typeUser": "User",
+        "user": "620558daf9820a24389f8d5f",
+        "errorCode": null,
+        "createdAt": "2022-06-07T22:55:29.250Z",
+        "updatedAt": "2022-06-07T22:55:29.250Z",
+        "deliveredAt": "2022-06-07T22:55:33.000Z",
+        "readAt": "2022-06-08T12:45:16.000Z"
+      },
+      "createdAt": "2022-06-07T22:55:29.404Z"
+    },
+    {
+      "_id": "62a26a6d14748483a814aabb",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62a26a6d147484509914aaba",
+        "type": "text",
+        "text": "Soporte 👩‍💻",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "createdAt": "2022-06-09T21:47:25.149Z",
+        "updatedAt": "2022-06-09T21:47:25.149Z",
+        "readAt": "2022-06-09T21:49:53.330Z"
+      },
+      "createdAt": "2022-06-09T21:47:25.228Z"
+    },
+    {
+      "_id": "62a26b151474841a8f14aac8",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62a26b15147484331714aac7",
+        "type": "text",
+        "text": ":)",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "createdAt": "2022-06-09T21:50:13.148Z",
+        "updatedAt": "2022-06-09T21:50:13.148Z",
+        "readAt": "2022-06-09T21:50:14.576Z"
+      },
+      "createdAt": "2022-06-09T21:50:13.224Z"
+    },
+    {
+      "_id": "62a26c905c426c74b812dd9b",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62a26c905c426c50b012dd9a",
+        "type": "text",
+        "text": "adiós!",
+        "typeUser": "User",
+        "user": "629f802f27231a3bd7a159a9",
+        "errorCode": null,
+        "createdAt": "2022-06-09T21:56:32.231Z",
+        "updatedAt": "2022-06-09T21:56:32.231Z",
+        "deliveredAt": "2022-06-09T21:56:34.000Z",
+        "readAt": "2022-06-09T21:57:34.000Z"
+      },
+      "createdAt": "2022-06-09T21:56:32.383Z"
+    },
+    {
+      "_id": "62a26d7a5c426c584412ddaa",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62a26d7a5c426ce27412dda9",
+        "type": "text",
+        "text": "👍",
+        "typeUser": "User",
+        "user": "629f802f27231a3bd7a159a9",
+        "errorCode": null,
+        "createdAt": "2022-06-09T22:00:26.381Z",
+        "updatedAt": "2022-06-09T22:00:26.381Z",
+        "deliveredAt": "2022-06-09T22:00:28.000Z",
+        "readAt": "2022-06-09T22:01:11.000Z"
+      },
+      "createdAt": "2022-06-09T22:00:26.533Z"
+    },
+    {
+      "_id": "62d81b080cc5f28afe7e765c",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62d81b080cc5f28cb97e765b",
+        "type": "tText",
+        "text": "Hola  adjsdasd. , su operación ya está en proceso. Gracias por la espera.",
+        "tText": "62d810f5e586f53bc04c7c4b",
+        "typeUser": "User",
+        "user": "620558daf9820a24389f8d5f",
+        "errorCode": null,
+        "createdAt": "2022-07-20T15:11:04.360Z",
+        "updatedAt": "2022-07-20T15:11:04.360Z",
+        "deliveredAt": "2022-07-20T15:11:07.000Z",
+        "readAt": "2022-07-20T15:19:45.000Z"
+      },
+      "createdAt": "2022-07-20T15:11:04.535Z"
+    },
+    {
+      "_id": "62d820610cc5f2e5bd7e766e",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62d820610cc5f2815c7e766d",
+        "type": "text",
+        "text": "😊",
+        "typeUser": "User",
+        "user": "620558daf9820a24389f8d5f",
+        "errorCode": null,
+        "createdAt": "2022-07-20T15:33:53.805Z",
+        "updatedAt": "2022-07-20T15:33:53.805Z",
+        "readAt": null
+      },
+      "createdAt": "2022-07-20T15:33:53.962Z"
+    },
+    {
+      "_id": "62d820daa491824175125b6e",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62d820daa4918255b8125b6d",
+        "type": "text",
+        "text": "Hola",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "remoteId": null,
+        "createdAt": "2022-07-20T15:35:54.826Z",
+        "updatedAt": "2022-07-20T15:35:54.826Z",
+        "readAt": "2022-07-20T15:36:55.268Z"
+      },
+      "createdAt": "2022-07-20T15:35:54.902Z"
+    },
+    {
+      "_id": "62d821190cc5f23c747e7682",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62d821180cc5f24d6a7e7681",
+        "type": "text",
+        "text": "hola",
+        "typeUser": "User",
+        "user": "620558daf9820a24389f8d5f",
+        "errorCode": null,
+        "createdAt": "2022-07-20T15:36:56.988Z",
+        "updatedAt": "2022-07-20T15:36:56.988Z",
+        "deliveredAt": "2022-07-20T15:36:59.000Z",
+        "readAt": "2022-07-20T15:36:59.000Z"
+      },
+      "createdAt": "2022-07-20T15:36:57.144Z"
+    },
+    {
+      "_id": "62d87ee693d10c60c3239590",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62d87ee593d10c0e1423958f",
+        "type": "tText",
+        "text": "Hola Maria Rodriguez Perez Carrillo, le compartimos su nuevo ticket.",
+        "tText": "62b61dda1b6c6a586eace667",
+        "typeUser": "User",
+        "user": "61eae2d3c4b8390503cddc09",
+        "createdAt": "2022-07-20T22:17:09.842Z",
+        "updatedAt": "2022-07-20T22:17:09.842Z",
+        "errorCode": 1010
+      },
+      "createdAt": "2022-07-20T22:17:10.018Z"
+    },
+    {
+      "_id": "62e024c1e98e0f2278647693",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62e024c1e98e0fb781647692",
+        "type": "text",
+        "text": "Soporte 👩‍💻",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "remoteId": null,
+        "createdAt": "2022-07-26T17:30:41.249Z",
+        "updatedAt": "2022-07-26T17:30:41.249Z",
+        "readAt": "2022-07-26T17:35:01.700Z"
+      },
+      "createdAt": "2022-07-26T17:30:41.327Z"
+    },
+    {
+      "_id": "62e024c4e98e0fcf7f64769b",
+      "type": "Message",
+      "message": {
+        "_id": "62e024c4e98e0f5b6d64769a",
+        "type": "text",
+        "text": "Sin agentes",
+        "user": "61e08a648341c2cb064746bc",
+        "typeUser": "UserSystem",
+        "createdAt": "2022-07-26T17:30:44.541Z",
+        "updatedAt": "2022-07-26T17:30:44.541Z",
+        "deliveredAt": "2022-07-26T17:30:45.000Z",
+        "readAt": "2022-07-26T17:30:46.000Z"
+      },
+      "createdAt": "2022-07-26T17:30:44.619Z",
+      "client": "629e39e8b2d31319081e0650"
+    },
+    {
+      "_id": "62e024d1e98e0f7ad76476a0",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62e024d1e98e0f05f564769f",
+        "type": "text",
+        "text": "Hola",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "remoteId": null,
+        "createdAt": "2022-07-26T17:30:57.494Z",
+        "updatedAt": "2022-07-26T17:30:57.494Z",
+        "readAt": "2022-07-26T17:35:01.700Z"
+      },
+      "createdAt": "2022-07-26T17:30:57.573Z"
+    },
+    {
+      "_id": "62e024f7e98e0f4bc06476a7",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62e024f7e98e0f45d46476a6",
+        "type": "text",
+        "text": "Hola",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "remoteId": null,
+        "createdAt": "2022-07-26T17:31:35.855Z",
+        "updatedAt": "2022-07-26T17:31:35.855Z",
+        "readAt": "2022-07-26T17:35:01.700Z"
+      },
+      "createdAt": "2022-07-26T17:31:35.932Z"
+    },
+    {
+      "_id": "62e025d2e98e0fb30a6476b6",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62e025d2e98e0fa02f6476b5",
+        "type": "text",
+        "text": "Hola",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "remoteId": null,
+        "createdAt": "2022-07-26T17:35:14.438Z",
+        "updatedAt": "2022-07-26T17:35:14.438Z",
+        "readAt": "2022-07-26T17:35:31.209Z"
+      },
+      "createdAt": "2022-07-26T17:35:14.515Z"
+    },
+    {
+      "_id": "62e025d4e98e0f8a836476bc",
+      "type": "Message",
+      "message": {
+        "_id": "62e025d4e98e0f04a76476bb",
+        "type": "text",
+        "text": "¡Bienvenido a Barbs Company!\nEn que te puedo ayudar|[Soporte 👩‍💻]|[Ventas 🛍]|[❌ Cancelar]",
+        "user": "61e08a648341c2cb064746bc",
+        "typeUser": "UserSystem",
+        "createdAt": "2022-07-26T17:35:16.212Z",
+        "updatedAt": "2022-07-26T17:35:16.212Z",
+        "deliveredAt": "2022-07-26T17:35:17.000Z",
+        "readAt": "2022-07-26T17:35:18.000Z"
+      },
+      "createdAt": "2022-07-26T17:35:16.290Z",
+      "client": "629e39e8b2d31319081e0650"
+    },
+    {
+      "_id": "62e025d8e98e0f213d6476c1",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62e025d8e98e0f5e436476c0",
+        "type": "text",
+        "text": "Ventas 🛍",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "remoteId": null,
+        "createdAt": "2022-07-26T17:35:20.673Z",
+        "updatedAt": "2022-07-26T17:35:20.673Z",
+        "readAt": "2022-07-26T17:35:52.076Z"
+      },
+      "createdAt": "2022-07-26T17:35:20.750Z"
+    },
+    {
+      "_id": "62e025dce98e0f19a16476cb",
+      "type": "Message",
+      "message": {
+        "_id": "62e025dce98e0f71f86476ca",
+        "type": "text",
+        "text": "Bienvenida",
+        "user": "61e08a648341c2cb064746bc",
+        "typeUser": "UserSystem",
+        "createdAt": "2022-07-26T17:35:24.786Z",
+        "updatedAt": "2022-07-26T17:35:24.786Z",
+        "deliveredAt": "2022-07-26T17:35:26.000Z",
+        "readAt": "2022-07-26T17:35:26.000Z"
+      },
+      "createdAt": "2022-07-26T17:35:24.863Z",
+      "client": "629e39e8b2d31319081e0650"
+    },
+    {
+      "_id": "62e02703e98e0f560464771a",
+      "type": "Message",
+      "message": {
+        "_id": "62e02703e98e0f6273647719",
+        "type": "text",
+        "text": "Bienvenida",
+        "user": "61e08a648341c2cb064746bc",
+        "typeUser": "UserSystem",
+        "createdAt": "2022-07-26T17:40:19.178Z",
+        "updatedAt": "2022-07-26T17:40:19.178Z",
+        "deliveredAt": "2022-07-26T17:40:20.000Z",
+        "readAt": "2022-07-26T17:40:20.000Z"
+      },
+      "createdAt": "2022-07-26T17:40:19.255Z",
+      "client": "629e39e8b2d31319081e0650"
+    },
+    {
+      "_id": "62e0272ae98e0f161c64772b",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62e02729e98e0f1f4e64772a",
+        "type": "text",
+        "text": "Ventas 🛍",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "remoteId": null,
+        "createdAt": "2022-07-26T17:40:57.968Z",
+        "updatedAt": "2022-07-26T17:40:57.968Z",
+        "readAt": "2022-07-26T17:41:16.515Z"
+      },
+      "createdAt": "2022-07-26T17:40:58.044Z"
+    },
+    {
+      "_id": "62e02735cf756ef6d05b2f42",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62e02735cf756eb8f65b2f41",
+        "type": "text",
+        "text": "😊",
+        "typeUser": "User",
+        "user": "620558daf9820a24389f8d5f",
+        "errorCode": null,
+        "createdAt": "2022-07-26T17:41:09.344Z",
+        "updatedAt": "2022-07-26T17:41:09.344Z",
+        "deliveredAt": "2022-07-26T17:41:11.000Z",
+        "readAt": "2022-07-26T17:41:11.000Z"
+      },
+      "createdAt": "2022-07-26T17:41:09.499Z"
+    },
+    {
+      "_id": "62e956398150bb9ac1aff8d8",
+      "type": "Message",
+      "message": {
+        "_id": "62e956398150bb231caff8d7",
+        "type": "text",
+        "text": "Sin agentes",
+        "user": "61e08a648341c2cb064746bc",
+        "typeUser": "UserSystem",
+        "createdAt": "2022-08-02T16:52:09.033Z",
+        "updatedAt": "2022-08-02T16:52:09.033Z",
+        "deliveredAt": "2022-08-02T16:52:10.000Z",
+        "readAt": "2022-08-02T16:52:10.000Z"
+      },
+      "createdAt": "2022-08-02T16:52:09.109Z",
+      "client": "629e39e8b2d31319081e0650"
+    },
+    {
+      "_id": "62e9569f8150bb68b0aff926",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62e9569f8150bbb5d5aff925",
+        "type": "text",
+        "text": "Soporte 👩‍💻",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "remoteId": null,
+        "createdAt": "2022-08-02T16:53:51.884Z",
+        "updatedAt": "2022-08-02T16:53:51.884Z",
+        "readAt": "2022-08-02T17:35:36.722Z"
+      },
+      "createdAt": "2022-08-02T16:53:51.959Z"
+    },
+    {
+      "_id": "62e962148150bb677baff951",
+      "type": "Message",
+      "client": "629e39e8b2d31319081e0650",
+      "message": {
+        "_id": "62e962148150bb9698aff950",
+        "type": "text",
+        "text": "Soporte 👩‍💻",
+        "typeUser": "Client",
+        "user": "629e39e8b2d31319081e0650",
+        "errorCode": null,
+        "remoteId": null,
+        "createdAt": "2022-08-02T17:42:44.272Z",
+        "updatedAt": "2022-08-02T17:42:44.272Z",
+        "readAt": "2022-08-03T17:47:59.105Z"
+      },
+      "createdAt": "2022-08-02T17:42:44.347Z"
+    },
+    {
+      "_id": "62f144f7556ddd61b8a25b0d",
+      "type": "Message",
+      "message": {
+        "_id": "62f144f7556ddd7c86a25b0c",
+        "type": "text",
+        "text": "¡Bienvenido a Barbs Company!\nEn que te puedo ayudar|[Soporte 👩‍💻]|[Ventas 🛍]|[❌ Cancelar]",
+        "user": "61e08a648341c2cb064746bc",
+        "typeUser": "UserSystem",
+        "createdAt": "2022-08-08T17:16:39.497Z",
+        "updatedAt": "2022-08-08T17:16:39.497Z",
+        "deliveredAt": "2022-08-08T17:16:41.000Z",
+        "readAt": "2022-08-08T17:16:41.000Z"
+      },
+      "createdAt": "2022-08-08T17:16:39.574Z",
+      "client": "629e39e8b2d31319081e0650"
+    }
+  ]
+}

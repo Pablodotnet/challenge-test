@@ -1,0 +1,372 @@
+{
+  "messages": [
+    {
+      "_id": "62c6139614748412ee14ab29",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "62c613961474845f9a14ab28",
+        "type": "text",
+        "text": "hola",
+        "typeUser": "Client",
+        "user": "629a8125b2d313190810212f",
+        "errorCode": null,
+        "createdAt": "2022-07-06T22:58:30.368Z",
+        "updatedAt": "2022-07-06T22:58:30.368Z",
+        "readAt": "2022-07-06T22:59:10.251Z"
+      },
+      "createdAt": "2022-07-06T22:58:30.457Z"
+    },
+    {
+      "_id": "62c6139814748437a714ab2f",
+      "type": "Message",
+      "message": {
+        "_id": "62c61398147484176e14ab2e",
+        "type": "text",
+        "text": "¡Bienvenido a Barbs Company!\nEn que te puedo ayudar|[Soporte 👩‍💻]|[Ventas 🛍]|[❌ Cancelar]",
+        "user": "61e08a648341c2cb064746bc",
+        "typeUser": "UserSystem",
+        "createdAt": "2022-07-06T22:58:32.200Z",
+        "updatedAt": "2022-07-06T22:58:32.200Z"
+      },
+      "createdAt": "2022-07-06T22:58:32.277Z",
+      "client": "629a8125b2d313190810212f"
+    },
+    {
+      "_id": "62c6146d147484769b14ab62",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "62c6146d147484b27b14ab61",
+        "type": "text",
+        "text": "ventas",
+        "typeUser": "Client",
+        "user": "629a8125b2d313190810212f",
+        "errorCode": null,
+        "createdAt": "2022-07-06T23:02:05.520Z",
+        "updatedAt": "2022-07-06T23:02:05.520Z"
+      },
+      "createdAt": "2022-07-06T23:02:05.595Z"
+    },
+    {
+      "_id": "62c614a55c426ce3dc12de58",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "62c614a55c426c27e112de57",
+        "type": "image",
+        "multimedia": {
+          "filename": "develop.png",
+          "size": "236319",
+          "ext": "png",
+          "mimetype": "image/png",
+          "thumbnail": "https://sellia-web-page-test.s3.us-east-2.amazonaws.com/images/selliaPhone.png",
+          "file": "https://sellia-web-page-test.s3.us-east-2.amazonaws.com/images/selliaPhone.png"
+        },
+        "typeUser": "User",
+        "user": "62c612cb1b6c6a5868ace72d",
+        "errorCode": null,
+        "createdAt": "2022-07-06T23:03:01.033Z",
+        "updatedAt": "2022-07-06T23:03:01.033Z"
+      },
+      "createdAt": "2022-07-06T23:03:01.199Z"
+    },
+    {
+      "_id": "62c6195314748454b614ab7c",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "62c61953147484975c14ab7b",
+        "type": "text",
+        "text": "chao",
+        "typeUser": "Client",
+        "user": "629a8125b2d313190810212f",
+        "errorCode": null,
+        "createdAt": "2022-07-06T23:22:59.450Z",
+        "updatedAt": "2022-07-06T23:22:59.450Z"
+      },
+      "createdAt": "2022-07-06T23:22:59.526Z"
+    },
+    {
+      "_id": "629a8127b3849919541bab00",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "629a8127b384993c441baaff",
+        "type": "text",
+        "text": "hola",
+        "typeUser": "Client",
+        "user": "629a8125b2d313190810212f",
+        "errorCode": null,
+        "createdAt": "2022-06-03T21:46:15.138Z",
+        "updatedAt": "2022-06-03T21:46:15.138Z",
+        "readAt": "2022-06-03T21:49:26.952Z"
+      },
+      "createdAt": "2022-06-03T21:46:15.227Z"
+    },
+    {
+      "_id": "629a81eb17e24876443a4289",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "629a81eb17e2483fc83a4288",
+        "type": "text",
+        "text": "holis",
+        "typeUser": "User",
+        "user": "629910d085598b4e0d00c3b1",
+        "errorCode": null,
+        "createdAt": "2022-06-03T21:49:31.352Z",
+        "updatedAt": "2022-06-03T21:49:31.352Z"
+      },
+      "createdAt": "2022-06-03T21:49:31.590Z"
+    },
+    {
+      "_id": "62c614141474847c1c14ab44",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "62c6141414748479fe14ab43",
+        "type": "text",
+        "text": "soporte",
+        "typeUser": "Client",
+        "user": "629a8125b2d313190810212f",
+        "errorCode": null,
+        "createdAt": "2022-07-06T23:00:36.486Z",
+        "updatedAt": "2022-07-06T23:00:36.486Z"
+      },
+      "createdAt": "2022-07-06T23:00:36.561Z"
+    },
+    {
+      "_id": "62c6141714748447cf14ab4d",
+      "type": "Message",
+      "message": {
+        "_id": "62c6141714748452b214ab4c",
+        "type": "text",
+        "text": "Sin agentes",
+        "user": "61e08a648341c2cb064746bc",
+        "typeUser": "UserSystem",
+        "createdAt": "2022-07-06T23:00:39.712Z",
+        "updatedAt": "2022-07-06T23:00:39.712Z"
+      },
+      "createdAt": "2022-07-06T23:00:39.786Z",
+      "client": "629a8125b2d313190810212f"
+    },
+    {
+      "_id": "62c6144514748485c914ab5a",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "62c61445147484307a14ab59",
+        "type": "text",
+        "text": "ayuda",
+        "typeUser": "Client",
+        "user": "629a8125b2d313190810212f",
+        "errorCode": null,
+        "createdAt": "2022-07-06T23:01:25.349Z",
+        "updatedAt": "2022-07-06T23:01:25.349Z"
+      },
+      "createdAt": "2022-07-06T23:01:25.424Z"
+    },
+    {
+      "_id": "62c769ad5c426c38e812de71",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "62c769ad5c426c94f712de70",
+        "type": "text",
+        "text": "¡Adiós!",
+        "typeUser": "User",
+        "user": "62c612cb1b6c6a5868ace72d",
+        "errorCode": null,
+        "createdAt": "2022-07-07T23:18:05.135Z",
+        "updatedAt": "2022-07-07T23:18:05.135Z"
+      },
+      "createdAt": "2022-07-07T23:18:05.310Z"
+    },
+    {
+      "_id": "629a818bb3849980171bab0a",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "629a818bb3849924d71bab09",
+        "type": "text",
+        "text": "hola",
+        "typeUser": "Client",
+        "user": "629a8125b2d313190810212f",
+        "errorCode": null,
+        "createdAt": "2022-06-03T21:47:55.492Z",
+        "updatedAt": "2022-06-03T21:47:55.492Z",
+        "readAt": "2022-06-03T21:49:26.952Z"
+      },
+      "createdAt": "2022-06-03T21:47:55.568Z"
+    },
+    {
+      "_id": "629a818db38499121d1bab11",
+      "type": "Message",
+      "message": {
+        "_id": "629a818db3849935171bab10",
+        "type": "text",
+        "text": "Sin agentes conectados",
+        "user": "61e08a648341c2cb064746bc",
+        "typeUser": "UserSystem",
+        "createdAt": "2022-06-03T21:47:57.883Z",
+        "updatedAt": "2022-06-03T21:47:57.883Z"
+      },
+      "createdAt": "2022-06-03T21:47:57.958Z",
+      "client": "629a8125b2d313190810212f"
+    },
+    {
+      "_id": "62c613d514748486cf14ab34",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "62c613d5147484286d14ab33",
+        "type": "text",
+        "text": "hola",
+        "typeUser": "Client",
+        "user": "629a8125b2d313190810212f",
+        "errorCode": null,
+        "createdAt": "2022-07-06T22:59:33.667Z",
+        "updatedAt": "2022-07-06T22:59:33.667Z"
+      },
+      "createdAt": "2022-07-06T22:59:33.744Z"
+    },
+    {
+      "_id": "62c613d61474847f5514ab37",
+      "type": "Message",
+      "message": {
+        "_id": "62c613d614748416a814ab36",
+        "type": "text",
+        "text": "¡Bienvenido a Barbs Company!\nEn que te puedo ayudar|[Soporte 👩‍💻]|[Ventas 🛍]|[❌ Cancelar]",
+        "user": "61e08a648341c2cb064746bc",
+        "typeUser": "UserSystem",
+        "createdAt": "2022-07-06T22:59:34.727Z",
+        "updatedAt": "2022-07-06T22:59:34.727Z"
+      },
+      "createdAt": "2022-07-06T22:59:34.805Z",
+      "client": "629a8125b2d313190810212f"
+    },
+    {
+      "_id": "62c61426147484ec5c14ab52",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "62c61426147484ddac14ab51",
+        "type": "text",
+        "text": "hola",
+        "typeUser": "Client",
+        "user": "629a8125b2d313190810212f",
+        "errorCode": null,
+        "createdAt": "2022-07-06T23:00:54.603Z",
+        "updatedAt": "2022-07-06T23:00:54.603Z"
+      },
+      "createdAt": "2022-07-06T23:00:54.678Z"
+    },
+    {
+      "_id": "62c616d314748498f414ab76",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "62c616d3147484008914ab75",
+        "type": "text",
+        "text": "hola",
+        "typeUser": "Client",
+        "user": "629a8125b2d313190810212f",
+        "errorCode": null,
+        "createdAt": "2022-07-06T23:12:19.238Z",
+        "updatedAt": "2022-07-06T23:12:19.238Z"
+      },
+      "createdAt": "2022-07-06T23:12:19.313Z"
+    },
+    {
+      "_id": "62c61aba1474849a5d14ab82",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "62c61ab914748423ac14ab81",
+        "type": "text",
+        "text": "hola",
+        "typeUser": "Client",
+        "user": "629a8125b2d313190810212f",
+        "errorCode": null,
+        "createdAt": "2022-07-06T23:28:57.970Z",
+        "updatedAt": "2022-07-06T23:28:57.970Z"
+      },
+      "createdAt": "2022-07-06T23:28:58.046Z"
+    },
+    {
+      "_id": "62c613e4147484b64b14ab3c",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "62c613e41474848d2014ab3b",
+        "type": "text",
+        "text": "ayuda",
+        "typeUser": "Client",
+        "user": "629a8125b2d313190810212f",
+        "errorCode": null,
+        "createdAt": "2022-07-06T22:59:48.155Z",
+        "updatedAt": "2022-07-06T22:59:48.155Z"
+      },
+      "createdAt": "2022-07-06T22:59:48.231Z"
+    },
+    {
+      "_id": "62c613e5147484bee814ab3f",
+      "type": "Message",
+      "message": {
+        "_id": "62c613e514748406e814ab3e",
+        "type": "text",
+        "text": "¡Bienvenido a Barbs Company!\nEn que te puedo ayudar|[Soporte 👩‍💻]|[Ventas 🛍]|[❌ Cancelar]",
+        "user": "61e08a648341c2cb064746bc",
+        "typeUser": "UserSystem",
+        "createdAt": "2022-07-06T22:59:49.211Z",
+        "updatedAt": "2022-07-06T22:59:49.211Z"
+      },
+      "createdAt": "2022-07-06T22:59:49.287Z",
+      "client": "629a8125b2d313190810212f"
+    },
+    {
+      "_id": "62c614d6147484335714ab6a",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "62c614d6147484252714ab69",
+        "type": "document",
+        "multimedia": {
+          "file": "https://sellia-web-page-test.s3.us-east-2.amazonaws.com/Placeholder-PDF.pdf",
+          "size": "51892",
+          "ext": "pdf",
+          "mimetype": "application/pdf"
+        },
+        "typeUser": "Client",
+        "user": "629a8125b2d313190810212f",
+        "errorCode": null,
+        "createdAt": "2022-07-06T23:03:50.647Z",
+        "updatedAt": "2022-07-06T23:03:50.647Z"
+      },
+      "createdAt": "2022-07-06T23:03:50.723Z"
+    },
+    {
+      "_id": "62c61549147484467514ab70",
+      "type": "Message",
+      "client": "629a8125b2d313190810212f",
+      "message": {
+        "_id": "62c61549147484645314ab6f",
+        "type": "video",
+        "multimedia": {
+          "file": "https://sellia-web-page-test.s3.us-east-2.amazonaws.com/hd0051_preview.mp4",
+          "size": "10667860",
+          "ext": "mp4",
+          "mimetype": "video/mp4",
+          "thumbnail": "https://sellia-web-page-test.s3.us-east-2.amazonaws.com/hd0051_preview_thumb.png"
+        },
+        "typeUser": "Client",
+        "user": "629a8125b2d313190810212f",
+        "errorCode": null,
+        "createdAt": "2022-07-06T23:05:45.387Z",
+        "updatedAt": "2022-07-06T23:05:45.387Z"
+      },
+      "createdAt": "2022-07-06T23:05:45.463Z"
+    }
+  ]
+}
