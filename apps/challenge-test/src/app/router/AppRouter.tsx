@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { AuthRoutes } from '../auth/routes/AuthRoutes';
-import { TrackerRoutes } from '../tracker/routes/TrackerRoutes';
+import { DashboardRoutes } from '../dashboard/routes/DashboardRoutes';
 import { useCheckAuth } from '../hooks';
 import { CheckingAuth } from '../ui';
 
@@ -14,7 +14,7 @@ export const AppRouter = () => {
   return (
     <Routes>
       {status === 'authenticated' ? (
-        <Route path="/*" element={<TrackerRoutes />} />
+        <Route path="/*" element={<DashboardRoutes />} />
       ) : (
         <Route path="/auth/*" element={<AuthRoutes />} />
       )}

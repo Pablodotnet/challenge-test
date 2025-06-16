@@ -1,10 +1,10 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import { TrackerPage } from "../pages/TrackerPage"
+import { DashboardPage } from "../pages/DashboardPage"
 
-export const TrackerRoutes = () => {
+export const DashboardRoutes = () => {
   return (
     <Routes>
-        <Route path="/" element={ <TrackerPage />} />
+        <Route path="/" element={ <DashboardPage />} />
         <Route path="/*" element={ <Navigate to="/" />} />
     </Routes>
   )

@@ -3,6 +3,9 @@ import { useAppSelector } from '../../hooks';
 import { useDispatch, useSelector } from 'react-redux';
 import { getIsSidebarDisplayed, toggleSidebar } from '../../store';
 import CloseIcon from '@mui/icons-material/Close';
+import { SideBarItem } from './SideBarItem';
+import { Client } from '../../helpers';
+import { setActiveClient } from '../../store/clients';
 
 type SideBarProps = {
   drawerWidth: number;
@@ -20,6 +23,11 @@ export const SideBar = ({ drawerWidth }: SideBarProps) => {
   const handleCloseSidebar = () => {
     dispatch(toggleSidebar());
   }
+
+  const clients = useAppSelector((state) => state.clients.clients || []);
+  const handleSetActiveClient = (clientId: string) => {
+    dispatch(setActiveClient(clientId));
+  };
 
   return (
     <Box
@@ -40,7 +48,7 @@ export const SideBar = ({ drawerWidth }: SideBarProps) => {
             justifyContent: 'space-between',
             alignItems: 'center',
             width: '100%',
-            p: 2
+            p: 2,
           }}
         >
           <Typography
@@ -56,7 +64,15 @@ export const SideBar = ({ drawerWidth }: SideBarProps) => {
           </IconButton>
         </Box>
         <Divider />
-        <List></List>
+        <List>
+          {clients.map((client: Client) => (
+            <SideBarItem
+              key={client._id}
+              title={client.name}
+              handleOnClick={() => handleSetActiveClient(client._id)}
+            ></SideBarItem>
+          ))}
+        </List>
       </Drawer>
     </Box>
   );
