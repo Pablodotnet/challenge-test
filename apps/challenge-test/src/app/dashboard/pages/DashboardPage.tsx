@@ -16,6 +16,10 @@ export const DashboardPage = () => {
   const isClientsLoading = clients.length === 0;
   const isConversationsLoading = conversations.length === 0;
 
+  const handleClickCard = (page: string) => {
+    window.location.href = page;
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
@@ -47,6 +51,9 @@ export const DashboardPage = () => {
                       alignItems: 'center',
                       justifyContent: 'center',
                     }}
+                    onClick={() => handleClickCard('/clientes')}
+                    role="button"
+                    className="cursor-pointer"
                   >
                     <AccountCircleIcon sx={{ fontSize: 90 }} />
                   </Box>
@@ -88,6 +95,9 @@ export const DashboardPage = () => {
                       alignItems: 'center',
                       justifyContent: 'center',
                     }}
+                    onClick={() => handleClickCard('/conversaciones')}
+                    role="button"
+                    className="cursor-pointer"
                   >
                     <QuestionAnswerIcon sx={{ fontSize: 80 }} />
                   </Box>
