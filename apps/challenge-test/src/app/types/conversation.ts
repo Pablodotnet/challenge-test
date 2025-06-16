@@ -6,3 +6,17 @@ export type ConversationIndexItem = {
   totalMessages: number;
   createdAt: string;
 };
+
+export type Conversation = {
+  messages: Message[];
+}
+
+export type Message = {
+  client?: string;
+  message: {
+    text: string;
+    user: string;
+    typeUser: 'Client' | 'UserSystem';
+  };
+  createdAt?: string;
+};

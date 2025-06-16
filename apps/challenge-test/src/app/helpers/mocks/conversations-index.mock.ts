@@ -1,4 +1,4 @@
-import { ConversationIndexItem } from '../../types';
+import { Conversation, ConversationIndexItem } from '../../types';
 import { sleep } from '../utils';
 
 const conversations: ConversationIndexItem[] = [
@@ -42,7 +42,7 @@ export const getConversationsWithMessageCount = async (): Promise<ConversationIn
           totalMessages,
         };
       } catch (err) {
-        console.error(`Failed to fetch ${conversation.fileName}`, err);
+        console.error(`Error al obtener ${conversation.fileName}`, err);
         return {
           ...conversation,
           totalMessages: 0,
@@ -58,4 +58,17 @@ export const getConversationCountByClientId = (clientId: string): number => {
   return conversations.filter(
     (conversation: ConversationIndexItem) => conversation.client_id === clientId
   ).length;
+};
+
+export const getConversationContentByFileName = async (
+  fileName: string
+): Promise<Conversation | null> => {
+  try {
+    const response = await fetch(`assets/conversations/${fileName}`);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(`Error al obtener el contenido de la conversación ${fileName}`, err);
+    return null;
+  }
 };

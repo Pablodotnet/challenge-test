@@ -9,27 +9,31 @@ import {
   Skeleton,
 } from '@mui/material';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ConversationIndexItem } from '../../types';
 import { getConversationsWithMessageCount } from '../../helpers/mocks/conversations-index.mock';
 import { formatDate } from '../../helpers';
 
 type ConversationsTableRowData = {
+  id: string;
   user: string;
   messages: number;
   createdAt: string;
 };
 
 function createData(
+  id: string,
   user: string,
   messages: number,
   createdAt: string
 ): ConversationsTableRowData {
-  return { user, messages, createdAt };
+  return { id, user, messages, createdAt };
 }
 
 export const ConversationsPage = () => {
   const [rows, setRows] = useState<ConversationsTableRowData[]>([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,6 +42,7 @@ export const ConversationsPage = () => {
       const newRows =
         conversationsIndex?.map((conversation: ConversationIndexItem) =>
           createData(
+            conversation.conversation_id.toString(),
             conversation.client_name,
             conversation.totalMessages,
             conversation.createdAt
@@ -96,8 +101,13 @@ export const ConversationsPage = () => {
               ))
             : rows.map((row) => (
                 <TableRow
-                  key={row.user}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  key={row.id}
+                  hover
+                  sx={{
+                    cursor: 'pointer',
+                    '&:last-child td, &:last-child th': { border: 0 },
+                  }}
+                  onClick={() => navigate(`/conversaciones/${row.id}`)}
                 >
                   <TableCell component="th" scope="row">
                     {row.user}
