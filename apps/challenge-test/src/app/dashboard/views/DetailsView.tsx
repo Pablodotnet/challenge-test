@@ -1,7 +1,7 @@
 import { SaveOutlined } from '@mui/icons-material';
 import { Button, Grid, Typography, TextField } from '@mui/material';
 import { useAppSelector } from '../../hooks';
-import { Client } from '../../helpers';
+import { Client } from '../../types';
 
 export const DetailsView = () => {
   const { active } = useAppSelector((state) => state.clients);

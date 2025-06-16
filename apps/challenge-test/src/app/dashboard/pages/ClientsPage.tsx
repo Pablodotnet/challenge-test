@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
-import { Client } from '../../helpers';
+import { Client } from '../../types';
 
 export const ClientsPage = () => {
   const clients: Client[] = useSelector((state: RootState) => state.clients.clients);
@@ -30,7 +30,18 @@ export const ClientsPage = () => {
                     <ListItemAvatar>
                       <Avatar alt={client.name} />
                     </ListItemAvatar>
-                    <ListItemText primary={client.name} />
+                    <ListItemText
+                      primary={client.name}
+                      secondary={
+                        <Typography
+                          component="span"
+                          variant="body2"
+                          sx={{ color: 'text.primary', display: 'inline' }}
+                        >
+                          Total de conversaciones: {client.totalConversations}
+                        </Typography>
+                      }
+                    />
                   </ListItem>
                   {index < clients.length - 1 && (
                     <Divider variant="inset" component="li" />
