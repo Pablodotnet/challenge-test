@@ -2,11 +2,13 @@ import { configureStore } from '@reduxjs/toolkit';
 import { authSlice } from './auth';
 import { clientsSlice } from './clients';
 import { sidebarSlice, themeSlice } from './theme';
+import { conversationsSlice } from './conversations';
 
 export const store = configureStore({
   reducer: {
     auth: authSlice.reducer,
     clients: clientsSlice.reducer,
+    conversations: conversationsSlice.reducer,
     theme: themeSlice.reducer,
     sidebar: sidebarSlice.reducer,
   },

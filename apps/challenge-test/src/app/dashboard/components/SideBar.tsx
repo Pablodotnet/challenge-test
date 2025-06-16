@@ -29,8 +29,8 @@ export const SideBar = ({ drawerWidth }: SideBarProps) => {
 
   const pages: Page[] = [
     { route: '/', name: 'Dashboard' },
-    { route: '/clients', name: 'Clients' },
-    { route: '/conversations', name: 'Conversations' },
+    { route: '/clientes', name: 'Clientes' },
+    { route: '/conversaciones', name: 'Conversaciones' },
   ];
 
   const handleSelectPage = (page: Page) => {

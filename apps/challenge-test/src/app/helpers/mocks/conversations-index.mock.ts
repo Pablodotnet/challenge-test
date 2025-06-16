@@ -1,4 +1,6 @@
-export const conversationsIndexMock = [
+import { ConversationIndexItem } from '../../types';
+
+export const conversationsIndexMock: ConversationIndexItem[] = [
   {
     client_id: '629a8125b2d313190810212f',
     client_name: 'Pedro Naranjo',

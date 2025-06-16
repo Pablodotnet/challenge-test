@@ -9,8 +9,8 @@ export const DashboardRoutes = () => {
     <Routes>
       <Route path="/" element={<DashboardLayout />}>
         <Route index element={<DashboardPage />} />
-        <Route path="/clients" element={<ClientsPage />} />
-        <Route path="/conversations" element={<ConversationsPage />} />
+        <Route path="/clientes" element={<ClientsPage />} />
+        <Route path="/conversaciones" element={<ConversationsPage />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Route>
     </Routes>
