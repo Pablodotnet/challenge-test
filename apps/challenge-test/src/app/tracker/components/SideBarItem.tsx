@@ -6,34 +6,33 @@ import {
   Grid,
   ListItemText,
 } from '@mui/material';
-import { Routine } from '../../types';
 import { useMemo } from 'react';
 import { useAppDispatch } from '../../hooks';
-import { setActiveRoutine } from '../../store/routines';
+import { setActiveClient } from '../../store/clients';
+import { Client } from '../../helpers';
 
 interface SideBarItemProps {
-  routine: Routine;
+  client: Client;
 }
 
-export const SideBarItem = ({ routine }: SideBarItemProps) => {
+export const SideBarItem = ({ client }: SideBarItemProps) => {
   const dispatch = useAppDispatch();
-  const { title, description } = routine;
+  const { name } = client;
   const newTitle = useMemo(() => {
-    return title.length > 17 ? `${title.substring(0, 17)}...` : title;
-  }, [title]);
-  const onClickRoutine = () => {
-    dispatch(setActiveRoutine(routine));
+    return name.length > 17 ? `${name.substring(0, 17)}...` : name;
+  }, [name]);
+  const onClickClient = () => {
+    dispatch(setActiveClient(client));
   };
 
   return (
     <ListItem disablePadding>
-      <ListItemButton onClick={onClickRoutine}>
+      <ListItemButton onClick={onClickClient}>
         <ListItemIcon>
           <TurnedInNot />
         </ListItemIcon>
         <Grid container>
           <ListItemText primary={newTitle} />
-          <ListItemText secondary={description} />
         </Grid>
       </ListItemButton>
     </ListItem>

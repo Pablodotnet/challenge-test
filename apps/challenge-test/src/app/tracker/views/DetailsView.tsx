@@ -1,10 +1,10 @@
 import { SaveOutlined } from '@mui/icons-material';
 import { Button, Grid, Typography, TextField } from '@mui/material';
 import { useAppSelector } from '../../hooks';
-import { Routine } from '../../types';
+import { Client } from '../../helpers';
 
 export const DetailsView = () => {
-  const { active } = useAppSelector((state) => state.routines);
+  const { active } = useAppSelector((state) => state.clients);
 
   return (
     <Grid
@@ -16,7 +16,7 @@ export const DetailsView = () => {
     >
       <Grid item>
         <Typography fontSize={39} fontWeight="light">
-          {active ? (active as Routine).title : ''}
+          {active ? (active as Client).name : ''}
         </Typography>
       </Grid>
       <Grid item>
@@ -32,19 +32,8 @@ export const DetailsView = () => {
           fullWidth
           placeholder="Write a title"
           label="Title"
-          value={`${active ? (active as Routine).title : null}`}
+          value={`${active ? (active as Client).name : null}`}
           sx={{ border: 'none', mb: 1 }}
-        />
-        <TextField
-          type="text"
-          variant="filled"
-          fullWidth
-          placeholder="Description"
-          label="Description"
-          sx={{ border: 'none', mb: 1 }}
-          value={`${active ? (active as Routine).description : null}`}
-          multiline
-          minRows={3}
         />
       </Grid>
     </Grid>
