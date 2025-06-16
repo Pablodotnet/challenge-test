@@ -1,19 +1,20 @@
 import { Client } from '../types';
 import { mockClients } from './mocks/clients.mock';
+import { sleep } from './utils';
 
 export const loadClients = async (): Promise<Client[]> => {
   return new Promise((resolve) => {
-    setTimeout(() => {
+    sleep(1000).then(() => {
       resolve(mockClients);
-    }, 500); // Simulated 500ms delay
+    })
   });
 };
 
 export const getClientById = async (id: string): Promise<Client | undefined> => {
   return new Promise((resolve) => {
-    setTimeout(() => {
+    sleep(1000).then(() => {
       const client = mockClients.find((c) => c._id === id);
       resolve(client);
-    }, 500); // Simulated 500ms delay
+    });
   });
 };

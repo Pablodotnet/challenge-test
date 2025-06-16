@@ -1,10 +1,11 @@
 import { ConversationIndexItem } from '../types';
 import { conversationsIndexMock } from './mocks/conversations-index.mock';
+import { sleep } from './utils';
 
 export const loadConversationsIndex = async (): Promise<ConversationIndexItem[]> => {
   return new Promise((resolve) => {
-    setTimeout(() => {
+    sleep(1000).then(() => {
       resolve(conversationsIndexMock);
-    }, 500); // Simulated 500ms delay
+    });
   });
 };

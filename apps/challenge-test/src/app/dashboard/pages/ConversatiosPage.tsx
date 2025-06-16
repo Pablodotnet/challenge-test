@@ -6,6 +6,7 @@ import {
   TableRow,
   TableCell,
   TableBody,
+  Skeleton,
 } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { ConversationIndexItem } from '../../types';
@@ -17,12 +18,17 @@ type ConversationsTableRowData = {
   createdAt: string;
 };
 
-function createData(user: string, messages: number, createdAt: string): ConversationsTableRowData {
+function createData(
+  user: string,
+  messages: number,
+  createdAt: string
+): ConversationsTableRowData {
   return { user, messages, createdAt };
 }
 
 export const ConversationsPage = () => {
   const [rows, setRows] = useState<ConversationsTableRowData[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,14 +44,17 @@ export const ConversationsPage = () => {
         ) ?? [];
 
       setRows(newRows);
+      setLoading(false);
     };
 
     fetchData();
   }, []);
 
+  const skeletonRows = Array.from({ length: 4 });
+
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table sx={{ minWidth: 650 }} aria-label="conversations table">
         <TableHead>
           <TableRow>
             <TableCell>Client</TableCell>
@@ -54,18 +63,32 @@ export const ConversationsPage = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.user}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.user}
-              </TableCell>
-              <TableCell>{row.messages}</TableCell>
-              <TableCell>{row.createdAt}</TableCell>
-            </TableRow>
-          ))}
+          {loading
+            ? skeletonRows.map((_, index) => (
+                <TableRow key={index}>
+                  <TableCell>
+                    <Skeleton />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton />
+                  </TableCell>
+                </TableRow>
+              ))
+            : rows.map((row) => (
+                <TableRow
+                  key={row.user}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {row.user}
+                  </TableCell>
+                  <TableCell>{row.messages}</TableCell>
+                  <TableCell>{row.createdAt}</TableCell>
+                </TableRow>
+              ))}
         </TableBody>
       </Table>
     </TableContainer>

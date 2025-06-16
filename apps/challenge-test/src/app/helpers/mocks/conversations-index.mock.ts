@@ -1,4 +1,5 @@
 import { ConversationIndexItem } from '../../types';
+import { sleep } from '../utils';
 
 const conversations: ConversationIndexItem[] = [
   {
@@ -22,10 +23,15 @@ const conversations: ConversationIndexItem[] = [
 export const conversationsIndexMock: ConversationIndexItem[] = conversations;
 
 export const getConversationsWithMessageCount = async (): Promise<ConversationIndexItem[]> => {
+  // Simulate a loading delay
+  await sleep(1000);
+
   const results = await Promise.all(
     conversations.map(async (conversation) => {
       try {
-        const response = await fetch(`assets/conversations/${conversation.fileName}`);
+        const response = await fetch(
+          `assets/conversations/${conversation.fileName}`
+        );
         const data = await response.json();
         const totalMessages = Array.isArray(data?.messages)
           ? data.messages.length
