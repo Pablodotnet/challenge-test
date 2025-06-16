@@ -4,12 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getIsSidebarDisplayed, toggleSidebar } from '../../store';
 import CloseIcon from '@mui/icons-material/Close';
 import { SideBarItem } from './SideBarItem';
-import { Client } from '../../helpers';
-import { setActiveClient } from '../../store/clients';
 
 type SideBarProps = {
   drawerWidth: number;
 };
+
+type Page = {
+  route: string;
+  name: string;
+}
 
 export const SideBar = ({ drawerWidth }: SideBarProps) => {
   const { displayName } = useAppSelector((state) => state.auth);
@@ -24,10 +27,15 @@ export const SideBar = ({ drawerWidth }: SideBarProps) => {
     dispatch(toggleSidebar());
   }
 
-  const clients = useAppSelector((state) => state.clients.clients || []);
-  const handleSetActiveClient = (clientId: string) => {
-    dispatch(setActiveClient(clientId));
-  };
+  const pages: Page[] = [
+    { route: '/', name: 'Dashboard' },
+    { route: '/clients', name: 'Clients' },
+    { route: '/conversations', name: 'Conversations' },
+  ];
+
+  const handleSelectPage = (page: Page) => {
+    window.location.href = page.route; // Navigate to the selected page
+  }
 
   return (
     <Box
@@ -65,11 +73,12 @@ export const SideBar = ({ drawerWidth }: SideBarProps) => {
         </Box>
         <Divider />
         <List>
-          {clients.map((client: Client) => (
+          {pages.map((page: Page) => (
             <SideBarItem
-              key={client._id}
-              title={client.name}
-              handleOnClick={() => handleSetActiveClient(client._id)}
+              selected={window.location.pathname === page.route}
+              key={page.name}
+              title={page.name}
+              handleOnClick={() => handleSelectPage(page)}
             ></SideBarItem>
           ))}
         </List>
