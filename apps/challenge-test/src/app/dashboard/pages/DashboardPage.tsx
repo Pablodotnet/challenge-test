@@ -1,7 +1,9 @@
-import { Avatar, Box, Grid, Paper, Skeleton, Typography } from '@mui/material';
+import { Box, Grid, Paper, Skeleton, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { Client } from '../../types';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 
 export const DashboardPage = () => {
   const clients: Client[] = useSelector(
@@ -36,7 +38,18 @@ export const DashboardPage = () => {
                 </>
               ) : (
                 <>
-                  <Avatar sx={{ width: 80, height: 80 }} />
+                  <Box
+                    sx={{
+                      width: 80,
+                      height: 80,
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <AccountCircleIcon sx={{ fontSize: 90 }} />
+                  </Box>
                   <Typography variant="h6">
                     {clients.length}{' '}
                     {clients.length === 1 ? 'cliente' : 'clientes'}
@@ -66,7 +79,18 @@ export const DashboardPage = () => {
                 </>
               ) : (
                 <>
-                  <Avatar sx={{ width: 80, height: 80 }} />
+                  <Box
+                    sx={{
+                      width: 80,
+                      height: 80,
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <QuestionAnswerIcon sx={{ fontSize: 80 }} />
+                  </Box>
                   <Typography variant="h6">
                     {conversations.length}{' '}
                     {conversations.length === 1
