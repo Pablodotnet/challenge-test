@@ -11,6 +11,7 @@ import {
 import { useEffect, useState } from 'react';
 import { ConversationIndexItem } from '../../types';
 import { getConversationsWithMessageCount } from '../../helpers/mocks/conversations-index.mock';
+import { formatDate } from '../../helpers';
 
 type ConversationsTableRowData = {
   user: string;
@@ -71,9 +72,9 @@ export const ConversationsPage = () => {
               </>
             ) : (
               <>
-                <TableCell>Client</TableCell>
-                <TableCell>Messages</TableCell>
-                <TableCell>Created At</TableCell>
+                <TableCell>Cliente</TableCell>
+                <TableCell>Mensajes</TableCell>
+                <TableCell>Creado En</TableCell>
               </>
             )}
           </TableRow>
@@ -102,7 +103,7 @@ export const ConversationsPage = () => {
                     {row.user}
                   </TableCell>
                   <TableCell>{row.messages}</TableCell>
-                  <TableCell>{row.createdAt}</TableCell>
+                  <TableCell>{formatDate(row.createdAt)}</TableCell>
                 </TableRow>
               ))}
         </TableBody>
