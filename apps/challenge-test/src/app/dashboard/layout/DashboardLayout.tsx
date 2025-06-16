@@ -3,14 +3,11 @@ import { useRef, useLayoutEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { NavBar, SideBar } from '../components';
 import { getIsSidebarDisplayed } from '../../store';
-
-type DashboardLayoutProps = {
-  children: JSX.Element | JSX.Element[];
-};
+import { Outlet } from 'react-router-dom';
 
 const drawerWidth = 240;
 
-export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
+export const DashboardLayout = () => {
   const appBarRef = useRef<HTMLDivElement>(null);
   const [appBarHeight, setAppBarHeight] = useState(64);
 
@@ -42,7 +39,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           mt: `${appBarHeight}px`,
         }}
       >
-        {children}
+        <Outlet />
       </Box>
     </Box>
   );
