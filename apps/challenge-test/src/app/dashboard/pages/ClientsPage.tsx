@@ -7,6 +7,7 @@ import {
   List,
   ListItem,
   ListItemAvatar,
+  ListItemButton,
   ListItemText,
   Paper,
   Skeleton,
@@ -15,14 +16,20 @@ import {
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { Client } from '../../types';
+import { useNavigate } from 'react-router-dom';
 
 export const ClientsPage = () => {
+  const navigate = useNavigate();
   const clients: Client[] = useSelector(
     (state: RootState) => state.clients.clients
   );
   const isLoading = clients.length === 0;
 
   const skeletonArray = Array.from({ length: 3 });
+
+  const handleClientClick = (clientId: string) => {
+    navigate(`/clientes/${clientId}`);
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -49,7 +56,10 @@ export const ClientsPage = () => {
                   ))
                 : clients.map((client, index) => (
                     <React.Fragment key={client._id}>
-                      <ListItem alignItems="flex-start">
+                      <ListItemButton
+                        alignItems="flex-start"
+                        onClick={() => handleClientClick(client._id)}
+                      >
                         <ListItemAvatar>
                           <Avatar alt={client.name} />
                         </ListItemAvatar>
@@ -66,7 +76,7 @@ export const ClientsPage = () => {
                             </Typography>
                           }
                         />
-                      </ListItem>
+                      </ListItemButton>
                       {index < clients.length - 1 && (
                         <Divider variant="inset" component="li" />
                       )}

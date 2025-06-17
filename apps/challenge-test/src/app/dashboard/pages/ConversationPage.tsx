@@ -8,7 +8,7 @@ import { getConversationContentByFileName } from '../../helpers/mocks/conversati
 import { formatDate } from '../../helpers';
 import { ConversationDisplay } from '../components/ConversationDisplay';
 
-export const ConversationDetailPage = () => {
+export const ConversationPage = () => {
   const { conversationId } = useParams<{ conversationId: string }>();
 
   const conversation: ConversationIndexItem | undefined = useSelector(
