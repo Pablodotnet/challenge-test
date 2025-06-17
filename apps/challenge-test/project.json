@@ -19,11 +19,6 @@
           "apps/challenge-test/src/favicon.ico",
           "apps/challenge-test/src/assets",
           {
-            "glob": "**/*",
-            "input": "apps/challenge-test/public",
-            "output": "/"
-          },
-          {
             "input": "apps/challenge-test",
             "glob": "staticwebapp.conf.json",
             "output": "/"
