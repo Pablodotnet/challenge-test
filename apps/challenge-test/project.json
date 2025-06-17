@@ -20,7 +20,7 @@
           "apps/challenge-test/src/assets",
           {
             "input": "apps/challenge-test",
-            "glob": "staticwebapp.conf.json",
+            "glob": "staticwebapp.config.json",
             "output": "/"
           }
         ],
