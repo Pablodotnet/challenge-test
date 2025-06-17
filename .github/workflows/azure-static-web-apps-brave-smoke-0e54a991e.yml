@@ -26,6 +26,11 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
+      - name: Clean Nx and Remove Dist
+        run: |
+          npx nx reset
+          rm -rf dist/apps/challenge-test
+
       - name: Build app
         run: npx nx run challenge-test:build
 
