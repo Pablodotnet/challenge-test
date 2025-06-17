@@ -32,7 +32,7 @@ export const LoginPage = () => {
   };
 
   return (
-    <AuthLayout title="Login">
+    <AuthLayout title="Login Test">
       <form
         onSubmit={onSubmit}
         className="animate__animated animate__fadeIn animate__faster"
