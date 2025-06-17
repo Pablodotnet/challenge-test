@@ -24,7 +24,7 @@ jobs:
           lfs: false
 
       - name: Install dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
 
       - name: Build app
         run: npx nx run challenge-test:build
