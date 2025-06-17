@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "build": "nx run challenge-test:build",
     "start": "node server.js"
   },
   "private": true,
