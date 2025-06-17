@@ -17,7 +17,12 @@
         "tsConfig": "apps/challenge-test/tsconfig.app.json",
         "assets": [
           "apps/challenge-test/src/favicon.ico",
-          "apps/challenge-test/src/assets"
+          "apps/challenge-test/src/assets",
+          {
+            "input": "apps/challenge-test",
+            "glob": "staticwebapp.conf.json",
+            "output": "/"
+          }
         ],
         "styles": ["apps/challenge-test/src/styles.css"],
         "scripts": [],
