@@ -31,9 +31,6 @@ jobs:
           npx nx reset
           rm -rf dist/apps/challenge-test
 
-      - name: Build app
-        run: npx nx run challenge-test:build
-
       - name: Install OIDC Client from Core Package
         run: yarn add @actions/core@1.6.0 @actions/http-client
 
