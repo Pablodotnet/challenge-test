@@ -26,6 +26,7 @@ import { getConversationsWithMessageCount } from '../../helpers/mocks/conversati
 import {
   getCurrentUser,
   getUserById,
+  getUsersChats,
   isClientFirestoreUser,
 } from '../../firebase/providers';
 import {
@@ -47,6 +48,9 @@ export const ClientPage = () => {
   >(null);
   const [fallbackClient, setFallbackClient] = useState<Client | null>(null);
 
+  const [userChats, setUserChats] = useState<
+    { id: string; users: string[]; lastMessage?: string }[] | null
+  >(null);
 
   const client: Client | undefined = useSelector((state: RootState) =>
     (state.clients.clients as Client[]).find((c: Client) => c._id === clientId)
@@ -82,6 +86,17 @@ export const ClientPage = () => {
 
     fetchClientIfMissing();
   }, [client, clientId]);
+
+  useEffect(() => {
+    const fetchUserChats = async () => {
+      if (isClientDBRegistered && clientId) {
+        const chats = await getUsersChats(clientId);
+        setUserChats(chats);
+      }
+    };
+
+    fetchUserChats();
+  }, [isClientDBRegistered, clientId]);
 
   const [loadedConversations, setLoadedConversations] = useState<
     ConversationIndexItem[] | null
@@ -187,7 +202,10 @@ export const ClientPage = () => {
                     {formatDate(effectiveClient.updatedAt)}
                   </Typography>
                   <Typography>
-                    Conversaciones totales {effectiveClient.totalConversations}
+                    Conversaciones totales{' '}
+                    {isClientDBRegistered && userChats
+                      ? userChats.length
+                      : effectiveClient.totalConversations}
                   </Typography>
                 </Stack>
               )}
@@ -235,6 +253,27 @@ export const ClientPage = () => {
                       {index < 2 && <Divider variant="inset" component="li" />}
                     </React.Fragment>
                   ))
+                : isClientDBRegistered && userChats
+                ? userChats.map((chat, index) => (
+                    <React.Fragment key={chat.id}>
+                      <ListItemButton onClick={() => openChat(chat.id)}>
+                        <ListItemAvatar>
+                          <Avatar>
+                            <MessageIcon />
+                          </Avatar>
+                        </ListItemAvatar>
+                        <ListItemText
+                          primary={`Chat ID: ${chat.id}`}
+                          secondary={`Último mensaje: ${
+                            chat.lastMessage || 'Sin mensajes'
+                          }`}
+                        />
+                      </ListItemButton>
+                      {index < userChats.length - 1 && (
+                        <Divider variant="inset" component="li" />
+                      )}
+                    </React.Fragment>
+                  ))
                 : clientConversations.map((conv, index) => (
                     <React.Fragment key={conv.conversation_id}>
                       <ListItemButton
@@ -252,7 +291,7 @@ export const ClientPage = () => {
                           </Avatar>
                         </ListItemAvatar>
                         <ListItemText
-                          primary={`${formatDate(conv.createdAt)}`}
+                          primary={formatDate(conv.createdAt)}
                           secondary={`Mensajes totales: ${conv.totalMessages.toString()}`}
                         />
                       </ListItemButton>

@@ -14,6 +14,8 @@ import {
   getDocs,
   setDoc,
   collection,
+  query,
+  where,
 } from 'firebase/firestore';
 
 const googleProvider = new GoogleAuthProvider();
@@ -26,6 +28,22 @@ export const isClientFirestoreUser = async (uid: string) => {
   const userRef = doc(FirebaseDB, 'users', uid);
   const userSnap = await getDoc(userRef);
   return userSnap.exists();
+};
+
+export const getUsersChats = async (uid: string) => {
+  const chatsRef = collection(FirebaseDB, 'chats');
+  const q = query(chatsRef, where('participants', 'array-contains', uid));
+  const chatsSnap = await getDocs(q);
+  const chats: { id: string; users: string[]; lastMessage?: string }[] = [];
+  chatsSnap.forEach((doc) => {
+    const data = doc.data();
+    chats.push({
+      id: doc.id,
+      users: data.users || [],
+      lastMessage: data.lastMessage || '',
+    });
+  });
+  return chats;
 };
 
 export const getUsers = async () => {
