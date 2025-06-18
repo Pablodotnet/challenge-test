@@ -26,7 +26,7 @@ import { getConversationsWithMessageCount } from '../../helpers/mocks/conversati
 import {
   getCurrentUser,
   getUserById,
-  getUsersChats,
+  getChatsWithClient,
   isClientFirestoreUser,
 } from '../../firebase/providers';
 import {
@@ -49,7 +49,7 @@ export const ClientPage = () => {
   const [fallbackClient, setFallbackClient] = useState<Client | null>(null);
 
   const [userChats, setUserChats] = useState<
-    { id: string; users: string[]; lastMessage?: string }[] | null
+    { id: string; participants: string[]; createdAt: string }[] | null
   >(null);
 
   const client: Client | undefined = useSelector((state: RootState) =>
@@ -90,7 +90,7 @@ export const ClientPage = () => {
   useEffect(() => {
     const fetchUserChats = async () => {
       if (isClientDBRegistered && clientId) {
-        const chats = await getUsersChats(clientId);
+        const chats = await getChatsWithClient(clientId);
         setUserChats(chats);
       }
     };
@@ -224,7 +224,11 @@ export const ClientPage = () => {
                 alignItems="center"
                 sx={{ mb: 2 }}
               >
-                <Typography variant="h6">Conversaciones del Cliente</Typography>
+                <Typography variant="h6">
+                  {isClientDBRegistered
+                    ? 'Chats con el Cliente'
+                    : 'Conversaciones del Cliente'}
+                </Typography>
                 {isClientDBRegistered && (
                   <Button
                     onClick={handleStartChat}
@@ -264,9 +268,7 @@ export const ClientPage = () => {
                         </ListItemAvatar>
                         <ListItemText
                           primary={`Chat ID: ${chat.id}`}
-                          secondary={`Último mensaje: ${
-                            chat.lastMessage || 'Sin mensajes'
-                          }`}
+                          secondary={`Creada en: ${chat.createdAt}`}
                         />
                       </ListItemButton>
                       {index < userChats.length - 1 && (

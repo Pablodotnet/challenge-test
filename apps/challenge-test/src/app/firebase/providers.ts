@@ -30,19 +30,46 @@ export const isClientFirestoreUser = async (uid: string) => {
   return userSnap.exists();
 };
 
-export const getUsersChats = async (uid: string) => {
+export const getChatById = async (chatId: string) => {
+  const chatRef = doc(FirebaseDB, 'chats', chatId);
+  const chatSnap = await getDoc(chatRef);
+  if (chatSnap.exists()) {
+    const data = chatSnap.data();
+    return {
+      id: chatSnap.id,
+      users: data.users || [],
+      createdAt: data.createdAt?.toDate ? data.createdAt.toDate() : null,
+    };
+  } else {
+    console.error(`El chat con ID ${chatId} no está registrado en Firestore.`);
+    return null;
+  }
+};
+
+export const getChatsWithClient = async (uid: string) => {
+  const currentUser = FirebaseAuth.currentUser;
+  if (!currentUser) return [];
+
   const chatsRef = collection(FirebaseDB, 'chats');
   const q = query(chatsRef, where('participants', 'array-contains', uid));
   const chatsSnap = await getDocs(q);
-  const chats: { id: string; users: string[]; lastMessage?: string }[] = [];
+
+  const chats: { id: string; participants: string[]; createdAt: string; }[] = [];
+
   chatsSnap.forEach((doc) => {
     const data = doc.data();
-    chats.push({
-      id: doc.id,
-      users: data.users || [],
-      lastMessage: data.lastMessage || '',
-    });
+    const participants: string[] = data.participants || [];
+    const createdAt: string = new Date(data.createdAt).toLocaleDateString();
+
+    if (participants.includes(currentUser.uid)) {
+      chats.push({
+        id: doc.id,
+        createdAt,
+        participants,
+      });
+    }
   });
+
   return chats;
 };
 
@@ -74,7 +101,7 @@ export const getUserById = async (uid: string) => {
       createdAt: data.createdAt?.toDate ? data.createdAt.toDate() : null,
     };
   } else {
-    console.error(`User with ID ${uid} does not exist in Firestore.`);
+    console.error(`Usuario con ID ${uid} no está registrado en Firestore.`);
     return null;
   }
 };
@@ -94,9 +121,9 @@ export const registerUserInFirestore = async () => {
       photoURL: user.photoURL || '',
       createdAt: new Date(),
     });
-    console.log(`New user document created: ${user.uid}`);
+    console.log(`Nuevo usuario creado: ${user.uid}`);
   } else {
-    console.log(`User already exists in Firestore: ${user.uid}`);
+    console.log(`El usuario ya existe en Firestore: ${user.uid}`);
   }
 }
 
