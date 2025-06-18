@@ -6,10 +6,60 @@ import {
   signInWithPopup,
   updateProfile,
 } from 'firebase/auth';
-import { FirebaseAuth } from './config';
+import { FirebaseAuth, FirebaseDB } from './config';
 import { LoginParams, RegisterParams } from '../types';
+import { doc, getDoc, setDoc } from 'firebase/firestore/lite';
 
 const googleProvider = new GoogleAuthProvider();
+
+export const getCurrentUser = () => {
+  return FirebaseAuth.currentUser;
+};
+
+export const isClientFirestoreUser = async (uid: string) => {
+  const userRef = doc(FirebaseDB, 'users', uid);
+  const userSnap = await getDoc(userRef);
+  return userSnap.exists();
+};
+
+export const getUserById = async (uid: string) => {
+  const userRef = doc(FirebaseDB, 'users', uid);
+  const userSnap = await getDoc(userRef);
+  if (userSnap.exists()) {
+    const data = userSnap.data();
+    return {
+      uid: userSnap.id,
+      email: data.email,
+      displayName: data.displayName || null,
+      photoURL: data.photoURL || null,
+      createdAt: data.createdAt?.toDate ? data.createdAt.toDate() : null,
+    };
+  } else {
+    console.error(`User with ID ${uid} does not exist in Firestore.`);
+    return null;
+  }
+};
+
+export const registerUserInFirestore = async () => {
+  const user = FirebaseAuth.currentUser;
+  if (!user) return;
+
+  const userRef = doc(FirebaseDB, 'users', user.uid);
+  const userSnap = await getDoc(userRef);
+
+  if (!userSnap.exists()) {
+    await setDoc(userRef, {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName || '',
+      photoURL: user.photoURL || '',
+      createdAt: new Date(),
+    });
+    console.log(`New user document created: ${user.uid}`);
+  } else {
+    console.log(`User already exists in Firestore: ${user.uid}`);
+  }
+}
 
 export const signInWithGoogle = async () => {
   try {

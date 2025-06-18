@@ -1,10 +1,13 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { DashboardPage } from '../pages/DashboardPage';
-import { DashboardLayout } from '../layout/DashboardLayout';
-import { ClientsPage } from '../pages/ClientsPage';
-import { ConversationsPage } from '../pages/ConversationsPage';
-import { ConversationPage } from '../pages/ConversationPage';
-import { ClientPage } from '../pages/ClientPage';
+import { DashboardLayout } from '../layout';
+import {
+  ChatPage,
+  ClientPage,
+  ClientsPage,
+  ConversationPage,
+  ConversationsPage,
+  DashboardPage
+} from '../pages';
 
 export const DashboardRoutes = () => {
   return (
@@ -13,6 +16,7 @@ export const DashboardRoutes = () => {
         <Route index element={<DashboardPage />} />
         <Route path="/clientes" element={<ClientsPage />} />
         <Route path="/clientes/:clientId" element={<ClientPage />} />
+        <Route path="/chat/:chatId" element={<ChatPage />} />
         <Route path="/conversaciones" element={<ConversationsPage />} />
         <Route
           path="/conversaciones/:conversationId"

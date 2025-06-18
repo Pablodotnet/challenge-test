@@ -5,6 +5,7 @@ import { FirebaseAuth } from '../firebase/config';
 import { logout, login } from '../store';
 import { startLoadingClients } from '../store/clients';
 import { startLoadingConversations } from '../store/conversations';
+import { registerUserInFirestore } from '../firebase/providers';
 
 export const useCheckAuth = () => {
   const { status } = useAppSelector((state) => state.auth);
@@ -17,6 +18,7 @@ export const useCheckAuth = () => {
       }
       const { uid, email, displayName, photoURL } = user;
       dispatch(login({ uid, email, displayName, photoURL }));
+      registerUserInFirestore();
       dispatch(startLoadingClients());
       dispatch(startLoadingConversations());
     });

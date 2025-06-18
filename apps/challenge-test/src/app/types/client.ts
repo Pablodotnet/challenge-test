@@ -4,4 +4,6 @@ export type Client = {
   createdAt: string;
   updatedAt: string;
   totalConversations: number;
+  email?: string;
+  photoURL?: string;
 };

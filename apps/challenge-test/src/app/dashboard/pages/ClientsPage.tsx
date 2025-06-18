@@ -23,7 +23,7 @@ export const ClientsPage = () => {
   const clients: Client[] = useSelector(
     (state: RootState) => state.clients.clients
   );
-  const isLoading = clients.length === 0;
+  const isLoadingClients = clients.length === 0;
 
   const skeletonArray = Array.from({ length: 3 });
 
@@ -35,9 +35,12 @@ export const ClientsPage = () => {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={7}>
-          <Paper elevation={3} sx={{ padding: 2 }}>
+          <Paper elevation={3} sx={{ padding: 2, marginBottom: 2 }}>
+            <Typography variant="h6" gutterBottom>
+              Lista de Clientes
+            </Typography>
             <List sx={{ width: '100%' }}>
-              {isLoading
+              {isLoadingClients
                 ? skeletonArray.map((_, index) => (
                     <React.Fragment key={index}>
                       <ListItem alignItems="flex-start">
@@ -85,6 +88,7 @@ export const ClientsPage = () => {
             </List>
           </Paper>
         </Grid>
+
         <Grid item xs={12} md={5}>
           <Paper elevation={3} sx={{ padding: 4, textAlign: 'center' }}>
             <Box
@@ -95,7 +99,7 @@ export const ClientsPage = () => {
                 gap: 2,
               }}
             >
-              {isLoading ? (
+              {isLoadingClients ? (
                 <>
                   <Skeleton variant="circular" width={80} height={80} />
                   <Skeleton width="40%" />

@@ -5,7 +5,7 @@ const conversations: ConversationIndexItem[] = [
   {
     client_id: '629a8125b2d313190810212f',
     client_name: 'Pedro Naranjo',
-    conversation_id: 1,
+    conversation_id: '1',
     fileName: '1_629a8125b2d313190810212f.json',
     totalMessages: 0,
     createdAt: '2022-07-06T22:58:30.457Z',
@@ -13,7 +13,7 @@ const conversations: ConversationIndexItem[] = [
   {
     client_id: '629e39e8b2d31319081e0650',
     client_name: 'Diego O',
-    conversation_id: 2,
+    conversation_id: '2',
     fileName: '2_629e39e8b2d31319081e0650.json',
     totalMessages: 0,
     createdAt: '2022-06-07T16:37:04.169Z',

@@ -18,23 +18,78 @@ import {
   ListItemText,
   ListItemButton,
   ListItemAvatar,
+  Button,
 } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import { formatDate } from '../../helpers';
 import { getConversationsWithMessageCount } from '../../helpers/mocks/conversations-index.mock';
+import {
+  getCurrentUser,
+  getUserById,
+  isClientFirestoreUser,
+} from '../../firebase/providers';
+import {
+  query,
+  collection,
+  where,
+  getDocs,
+  addDoc,
+} from 'firebase/firestore/lite';
+import { FirebaseDB } from '../../firebase/config';
 
 export const ClientPage = () => {
   const navigate = useNavigate();
   const { clientId } = useParams<{ clientId: string }>();
+  const currentUser = getCurrentUser();
+
+  const [isClientDBRegistered, setIsClientDBRegistered] = useState<
+    boolean | null
+  >(null);
+  const [fallbackClient, setFallbackClient] = useState<Client | null>(null);
+
 
   const client: Client | undefined = useSelector((state: RootState) =>
     (state.clients.clients as Client[]).find((c: Client) => c._id === clientId)
   );
 
+  useEffect(() => {
+    const checkUser = async () => {
+      if (!clientId) return;
+      const exists = await isClientFirestoreUser(clientId);
+      setIsClientDBRegistered(exists);
+    };
+
+    checkUser();
+  }, [clientId]);
+
+  useEffect(() => {
+    const fetchClientIfMissing = async () => {
+      if (!client && clientId) {
+        const user = await getUserById(clientId);
+        if (user) {
+          setFallbackClient({
+            _id: user.uid,
+            name: user.displayName || user.email || 'Cliente sin nombre',
+            email: user.email || '',
+            photoURL: user.photoURL || '',
+            createdAt: user.createdAt || new Date(),
+            updatedAt: new Date().toDateString(),
+            totalConversations: 0,
+          });
+        }
+      }
+    };
+
+    fetchClientIfMissing();
+  }, [client, clientId]);
+
   const [loadedConversations, setLoadedConversations] = useState<
     ConversationIndexItem[] | null
   >(null);
   const [isLoadingConversations, setIsLoadingConversations] = useState(true);
+
+  const effectiveClient = client || fallbackClient;
+  const isLoading = !effectiveClient || isLoadingConversations;
 
   useEffect(() => {
     const loadConversations = async () => {
@@ -54,7 +109,47 @@ export const ClientPage = () => {
         )
       : [];
 
-  const isLoading = !client || isLoadingConversations;
+  const handleStartChat = async () => {
+    const clientId = effectiveClient?._id;
+    const currentUserId = currentUser?.uid;
+    const chatsRef = collection(FirebaseDB, 'chats');
+    const q = query(
+      chatsRef,
+      where('participants', 'array-contains', currentUserId)
+    );
+
+    const querySnapshot = await getDocs(q);
+
+    let existingChat = null;
+
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      if (data.participants.includes(clientId)) {
+        existingChat = doc;
+      }
+    });
+
+    let chatId;
+
+    if (existingChat) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      chatId = (existingChat as any).id;
+    } else {
+      const newChat = await addDoc(chatsRef, {
+        clientId,
+        participants: [currentUserId, clientId],
+        createdAt: Date.now(),
+      });
+      chatId = newChat.id;
+    }
+
+    openChat(`${chatId}`);
+  };
+
+
+  const openChat = (chatId: string) => {
+    navigate(`/chat/${chatId}`);
+  }
 
   return (
     <Box>
@@ -81,16 +176,17 @@ export const ClientPage = () => {
                 </>
               ) : (
                 <Stack spacing={1}>
-                  <Typography>{client._id}</Typography>
-                  <Typography>{client.name}</Typography>
+                  <Typography>{effectiveClient._id}</Typography>
+                  <Typography>{effectiveClient.name}</Typography>
                   <Typography>
-                    Creado en {formatDate(client.createdAt)}
+                    Creado en {formatDate(effectiveClient.createdAt)}
                   </Typography>
                   <Typography>
-                    Última actualización en {formatDate(client.updatedAt)}
+                    Última actualización en{' '}
+                    {formatDate(effectiveClient.updatedAt)}
                   </Typography>
                   <Typography>
-                    Conversaciones totales {client.totalConversations}
+                    Conversaciones totales {effectiveClient.totalConversations}
                   </Typography>
                 </Stack>
               )}
@@ -103,9 +199,27 @@ export const ClientPage = () => {
             {isLoading ? (
               <Skeleton variant="text" width="50%" height={32} sx={{ mb: 2 }} />
             ) : (
-              <Typography variant="h6" sx={{ mb: 2 }}>
-                Conversaciones del Cliente
-              </Typography>
+              <Box
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+                sx={{ mb: 2 }}
+              >
+                <Typography variant="h6">Conversaciones del Cliente</Typography>
+                {isClientDBRegistered && (
+                  <Button
+                    onClick={handleStartChat}
+                    style={{
+                      padding: '8px 16px',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Iniciar Chat
+                  </Button>
+                )}
+              </Box>
             )}
             <List sx={{ width: '100%' }}>
               {isLoading
@@ -123,9 +237,13 @@ export const ClientPage = () => {
                 : clientConversations.map((conv, index) => (
                     <React.Fragment key={conv.conversation_id}>
                       <ListItemButton
-                        onClick={() =>
-                          navigate(`/conversaciones/${conv.conversation_id}`)
-                        }
+                        onClick={() => {
+                          if (isClientDBRegistered) {
+                            openChat(conv.conversation_id);
+                          } else {
+                            navigate(`/conversaciones/${conv.conversation_id}`);
+                          }
+                        }}
                       >
                         <ListItemAvatar>
                           <Avatar>

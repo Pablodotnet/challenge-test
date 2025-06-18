@@ -15,7 +15,7 @@ export const ConversationPage = () => {
     (state: RootState) =>
       (state.conversations.index as ConversationIndexItem[]).find(
         (c: ConversationIndexItem) =>
-          c.conversation_id.toString() === conversationId
+          c.conversation_id === conversationId
       )
   );
 

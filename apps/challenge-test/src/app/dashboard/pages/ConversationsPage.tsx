@@ -42,7 +42,7 @@ export const ConversationsPage = () => {
       const newRows =
         conversationsIndex?.map((conversation: ConversationIndexItem) =>
           createData(
-            conversation.conversation_id.toString(),
+            conversation.conversation_id,
             conversation.client_name,
             conversation.totalMessages,
             conversation.createdAt
