@@ -8,7 +8,7 @@ import {
 } from 'firebase/auth';
 import { FirebaseAuth, FirebaseDB } from './config';
 import { LoginParams, RegisterParams } from '../types';
-import { doc, getDoc, setDoc } from 'firebase/firestore/lite';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 
 const googleProvider = new GoogleAuthProvider();
 

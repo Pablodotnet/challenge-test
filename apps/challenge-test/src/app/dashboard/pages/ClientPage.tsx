@@ -34,7 +34,7 @@ import {
   where,
   getDocs,
   addDoc,
-} from 'firebase/firestore/lite';
+} from 'firebase/firestore';
 import { FirebaseDB } from '../../firebase/config';
 
 export const ClientPage = () => {
@@ -139,6 +139,7 @@ export const ClientPage = () => {
         clientId,
         participants: [currentUserId, clientId],
         createdAt: Date.now(),
+        messages: [],
       });
       chatId = newChat.id;
     }
