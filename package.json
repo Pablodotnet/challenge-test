@@ -9,7 +9,8 @@
     "test": "nx run challenge-test:test",
     "test-ci": "nx run challenge-test:test --ci",
     "start": "node server.js",
-    "prettier": "prettier --write \"{apps,libs}/**/*.{ts,tsx,js,jsx,json,md}\""
+    "prettier": "prettier --write \"{apps,libs}/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "open-coverage": "open coverage/apps/challenge-test/lcov-report/index.html"
   },
   "private": true,
   "dependencies": {

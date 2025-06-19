@@ -62,7 +62,11 @@ export const LoginPage = () => {
             ></TextField>
           </Grid>
           {errorMessage && (
-            <Grid data-testid="error-message-container" container sx={{ mt: 1 }}>
+            <Grid
+              data-testid="error-message-container"
+              container
+              sx={{ mt: 1 }}
+            >
               <Grid item xs={12}>
                 <Alert severity="error">{errorMessage}</Alert>
               </Grid>
