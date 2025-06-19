@@ -1,4 +1,13 @@
-import { Box, Divider, Drawer, IconButton, List, Typography, useMediaQuery, useTheme } from '@mui/material';
+import {
+  Box,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import { useAppSelector } from '../../hooks';
 import { useDispatch, useSelector } from 'react-redux';
 import { getIsSidebarDisplayed, toggleSidebar } from '../../store';
@@ -12,7 +21,7 @@ type SideBarProps = {
 type Page = {
   route: string;
   name: string;
-}
+};
 
 export const SideBar = ({ drawerWidth }: SideBarProps) => {
   const { displayName } = useAppSelector((state) => state.auth);
@@ -25,7 +34,7 @@ export const SideBar = ({ drawerWidth }: SideBarProps) => {
   const displaySidebar = isSidebarOpen;
   const handleCloseSidebar = () => {
     dispatch(toggleSidebar());
-  }
+  };
 
   const pages: Page[] = [
     { route: '/', name: 'Dashboard' },
@@ -35,7 +44,7 @@ export const SideBar = ({ drawerWidth }: SideBarProps) => {
 
   const handleSelectPage = (page: Page) => {
     window.location.href = page.route; // Navigate to the selected page
-  }
+  };
 
   return (
     <Box

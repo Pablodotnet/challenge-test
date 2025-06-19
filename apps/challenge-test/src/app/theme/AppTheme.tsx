@@ -15,11 +15,13 @@ export const AppTheme = ({ children }: AppThemeProps) => {
   }, [isDarkMode]);
 
   return (
-    <ThemeProvider theme={createTheme({
+    <ThemeProvider
+      theme={createTheme({
         palette: {
-          mode: isDarkMode ? 'dark' : 'light'
-        }
-    })}>
+          mode: isDarkMode ? 'dark' : 'light',
+        },
+      })}
+    >
       <CssBaseline />
       {children}
     </ThemeProvider>

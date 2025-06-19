@@ -6,7 +6,7 @@ import {
   ClientsPage,
   ConversationPage,
   ConversationsPage,
-  DashboardPage
+  DashboardPage,
 } from '../pages';
 
 export const DashboardRoutes = () => {

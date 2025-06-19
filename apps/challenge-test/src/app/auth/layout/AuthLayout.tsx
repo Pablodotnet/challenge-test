@@ -24,11 +24,17 @@ export const AuthLayout = ({ children, title = '' }: AuthLayoutProps) => {
           borderRadius: 2,
         }}
       >
-        <Grid container alignItems="center" justifyContent="space-between" sx={{ mb: 2 }}>
+        <Grid
+          container
+          alignItems="center"
+          justifyContent="space-between"
+          sx={{ mb: 2 }}
+        >
           <Typography
             variant="h4"
-            sx={{ mb: 0, textAlign: { xs: 'left', sm: 'center' }, flexGrow: 1 }}>
-              {title}
+            sx={{ mb: 0, textAlign: { xs: 'left', sm: 'center' }, flexGrow: 1 }}
+          >
+            {title}
           </Typography>
           <ToggleTheme></ToggleTheme>
         </Grid>

@@ -14,12 +14,12 @@ export const ConversationPage = () => {
   const conversation: ConversationIndexItem | undefined = useSelector(
     (state: RootState) =>
       (state.conversations.index as ConversationIndexItem[]).find(
-        (c: ConversationIndexItem) =>
-          c.conversation_id === conversationId
+        (c: ConversationIndexItem) => c.conversation_id === conversationId
       )
   );
 
-  const [conversationContent, setConversationContent] = useState<Conversation | null>(null);
+  const [conversationContent, setConversationContent] =
+    useState<Conversation | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -73,7 +73,9 @@ export const ConversationPage = () => {
       </Paper>
 
       <Paper elevation={3} sx={{ p: 2 }}>
-        <Typography variant="h6" sx={{ mb: 2 }}>Mensajes</Typography>
+        <Typography variant="h6" sx={{ mb: 2 }}>
+          Mensajes
+        </Typography>
         {conversationContent && conversationContent?.messages?.length > 0 ? (
           <ConversationDisplay
             clientName={conversation.client_name}

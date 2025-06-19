@@ -12,6 +12,4 @@ export const clientsSlice = createSlice({
   },
 });
 
-export const {
-  setClients,
-} = clientsSlice.actions;
+export const { setClients } = clientsSlice.actions;

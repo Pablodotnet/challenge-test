@@ -54,7 +54,7 @@ export const getChatsWithClient = async (uid: string) => {
   const q = query(chatsRef, where('participants', 'array-contains', uid));
   const chatsSnap = await getDocs(q);
 
-  const chats: { id: string; participants: string[]; createdAt: string; }[] = [];
+  const chats: { id: string; participants: string[]; createdAt: string }[] = [];
 
   chatsSnap.forEach((doc) => {
     const data = doc.data();
@@ -76,7 +76,8 @@ export const getChatsWithClient = async (uid: string) => {
 export const getUsers = async () => {
   const usersRef = collection(FirebaseDB, 'users');
   const usersSnap = await getDocs(usersRef);
-  const users: { uid: string; email: string; displayName: string | null }[] = [];
+  const users: { uid: string; email: string; displayName: string | null }[] =
+    [];
   usersSnap.forEach((doc) => {
     const data = doc.data();
     users.push({
@@ -125,7 +126,7 @@ export const registerUserInFirestore = async () => {
   } else {
     console.log(`El usuario ya existe en Firestore: ${user.uid}`);
   }
-}
+};
 
 export const signInWithGoogle = async () => {
   try {

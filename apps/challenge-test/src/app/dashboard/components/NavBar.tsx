@@ -2,11 +2,7 @@ import React from 'react';
 import { LogoutOutlined, MenuOutlined } from '@mui/icons-material';
 import { AppBar, Grid, IconButton, Toolbar, Typography } from '@mui/material';
 import { useAppDispatch } from '../../hooks';
-import {
-  getIsSidebarDisplayed,
-  startLogout,
-  toggleSidebar,
-} from '../../store';
+import { getIsSidebarDisplayed, startLogout, toggleSidebar } from '../../store';
 import { ToggleTheme } from '../../ui';
 import { useSelector } from 'react-redux';
 
@@ -24,7 +20,7 @@ export const NavBar = React.forwardRef<HTMLDivElement, NavBarProps>(
     const displaySidebar = useSelector(getIsSidebarDisplayed);
     const handleToggleSidebar = () => {
       dispatch(toggleSidebar());
-    }
+    };
 
     return (
       <AppBar

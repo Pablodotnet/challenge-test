@@ -74,7 +74,7 @@ export const ChatPage = () => {
   const isCurrentUserMessage = (sender: string) => {
     const currentUser = getCurrentUser();
     return currentUser ? sender === currentUser.uid : false;
-  }
+  };
 
   const theme = useTheme();
   const clientBg =
@@ -124,10 +124,12 @@ export const ChatPage = () => {
                       borderRadius: 2,
                     }}
                   >
-                    <Typography variant="body2" color="text.secondary" gutterBottom>
-                        {isCurrentUserMsg
-                          ? `Yo`
-                          : `Usuario`}
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      gutterBottom
+                    >
+                      {isCurrentUserMsg ? `Yo` : `Usuario`}
                     </Typography>
                     <Typography variant="body1" color="text.primary">
                       {msg.text}

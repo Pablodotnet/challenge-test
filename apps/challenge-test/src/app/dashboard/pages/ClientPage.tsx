@@ -29,13 +29,7 @@ import {
   getChatsWithClient,
   isClientFirestoreUser,
 } from '../../firebase/providers';
-import {
-  query,
-  collection,
-  where,
-  getDocs,
-  addDoc,
-} from 'firebase/firestore';
+import { query, collection, where, getDocs, addDoc } from 'firebase/firestore';
 import { FirebaseDB } from '../../firebase/config';
 
 export const ClientPage = () => {
@@ -162,10 +156,9 @@ export const ClientPage = () => {
     openChat(`${chatId}`);
   };
 
-
   const openChat = (chatId: string) => {
     navigate(`/chat/${chatId}`);
-  }
+  };
 
   return (
     <Box>

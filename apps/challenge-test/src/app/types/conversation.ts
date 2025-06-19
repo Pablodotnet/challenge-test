@@ -9,7 +9,7 @@ export type ConversationIndexItem = {
 
 export type Conversation = {
   messages: Message[];
-}
+};
 
 export type Message = {
   client?: string;

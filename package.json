@@ -6,7 +6,8 @@
     "build": "nx run challenge-test:build",
     "lint-ci": "nx run challenge-test:lint --ci",
     "test-ci": "nx run challenge-test:test --ci",
-    "start": "node server.js"
+    "start": "node server.js",
+    "prettier": "prettier --write \"{apps,libs}/**/*.{ts,tsx,js,jsx,json,md}\""
   },
   "private": true,
   "dependencies": {

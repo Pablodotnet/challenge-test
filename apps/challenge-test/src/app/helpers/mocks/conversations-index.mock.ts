@@ -22,7 +22,9 @@ const conversations: ConversationIndexItem[] = [
 
 export const conversationsIndexMock: ConversationIndexItem[] = conversations;
 
-export const getConversationsWithMessageCount = async (): Promise<ConversationIndexItem[]> => {
+export const getConversationsWithMessageCount = async (): Promise<
+  ConversationIndexItem[]
+> => {
   // Simulate a loading delay
   await sleep(1000);
 
@@ -68,7 +70,10 @@ export const getConversationContentByFileName = async (
     const data = await response.json();
     return data;
   } catch (err) {
-    console.error(`Error al obtener el contenido de la conversación ${fileName}`, err);
+    console.error(
+      `Error al obtener el contenido de la conversación ${fileName}`,
+      err
+    );
     return null;
   }
 };
