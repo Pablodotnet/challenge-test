@@ -5,6 +5,7 @@
     "module": "commonjs",
     "types": [
       "jest",
+      "@testing-library/jest-dom",
       "node",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"

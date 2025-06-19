@@ -31,6 +31,7 @@ export const AuthLayout = ({ children, title = '' }: AuthLayoutProps) => {
           sx={{ mb: 2 }}
         >
           <Typography
+            data-testid="auth-title"
             variant="h4"
             sx={{ mb: 0, textAlign: { xs: 'left', sm: 'center' }, flexGrow: 1 }}
           >

@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import App from './app';
@@ -28,5 +28,18 @@ describe('App', () => {
       </Provider>
     );
     expect(baseElement).toBeTruthy();
+  });
+
+  it('should display Login title on /auth/login route', () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/auth/login']}>
+          <App />
+        </MemoryRouter>
+      </Provider>
+    );
+
+    const authTitle = screen.getByTestId('auth-title');
+    expect(authTitle).toHaveTextContent('Login');
   });
 });
