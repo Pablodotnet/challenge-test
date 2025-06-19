@@ -26,6 +26,12 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
+      - name: Run Lint
+        run: yarn lint-ci
+
+      - name: Run Tests
+        run: yarn test-ci
+
       - name: Clean Nx and Remove Dist
         run: |
           npx nx reset

@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "nx run challenge-test:build --skip-nx-cache",
+    "build": "nx run challenge-test:build",
+    "lint-ci": "nx run challenge-test:lint --ci",
+    "test-ci": "nx run challenge-test:test --ci",
     "start": "node server.js"
   },
   "private": true,
