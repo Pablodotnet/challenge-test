@@ -14,7 +14,11 @@ export const ToggleTheme = () => {
   };
 
   return (
-    <IconButton data-testid="toggle-theme-btn" aria-label="toggle theme" onClick={handleToggle}>
+    <IconButton
+      data-testid="toggle-theme-btn"
+      aria-label="toggle theme"
+      onClick={handleToggle}
+    >
       {isDarkMode ? (
         <DarkModeIcon></DarkModeIcon>
       ) : (
