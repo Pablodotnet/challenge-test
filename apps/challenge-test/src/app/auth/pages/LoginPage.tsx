@@ -34,6 +34,7 @@ export const LoginPage = () => {
   return (
     <AuthLayout title="Login">
       <form
+        data-testid="login-form"
         onSubmit={onSubmit}
         className="animate__animated animate__fadeIn animate__faster"
       >
@@ -60,14 +61,17 @@ export const LoginPage = () => {
               onChange={onInputChange}
             ></TextField>
           </Grid>
-          <Grid container display={errorMessage ? '' : 'none'} sx={{ mt: 1 }}>
-            <Grid item xs={12}>
-              <Alert severity="error">{errorMessage}</Alert>
+          {errorMessage && (
+            <Grid data-testid="error-message-container" container sx={{ mt: 1 }}>
+              <Grid item xs={12}>
+                <Alert severity="error">{errorMessage}</Alert>
+              </Grid>
             </Grid>
-          </Grid>
+          )}
           <Grid container spacing={2} sx={{ mb: 2, mt: 1 }}>
             <Grid item xs={12} sm={6}>
               <Button
+                data-testid="login-button"
                 disabled={isAuthenticating}
                 type="submit"
                 variant="contained"
@@ -78,6 +82,7 @@ export const LoginPage = () => {
             </Grid>
             <Grid item xs={12} sm={6}>
               <Button
+                data-testid="google-button"
                 disabled={isAuthenticating}
                 variant="contained"
                 fullWidth
