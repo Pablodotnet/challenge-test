@@ -12,7 +12,7 @@ import { registerUserInFirestore } from '../firebase/providers';
 
 jest.mock('firebase/auth', () => ({
   onAuthStateChanged: jest.fn(),
-  getAuth: jest.fn()
+  getAuth: jest.fn(),
 }));
 
 jest.mock('../hooks', () => ({
@@ -36,7 +36,9 @@ describe('useCheckAuth hook', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    (useAppSelector as unknown as jest.Mock).mockReturnValue({ status: 'checking' });
+    (useAppSelector as unknown as jest.Mock).mockReturnValue({
+      status: 'checking',
+    });
     (useAppDispatch as unknown as jest.Mock).mockReturnValue(mockDispatch);
   });
 
@@ -75,7 +77,9 @@ describe('useCheckAuth hook', () => {
   });
 
   it('should return the correct auth status', () => {
-    (useAppSelector as unknown as jest.Mock).mockReturnValue({ status: 'authenticated' });
+    (useAppSelector as unknown as jest.Mock).mockReturnValue({
+      status: 'authenticated',
+    });
 
     const { result } = renderHook(() => useCheckAuth());
     expect(result.current.status).toBe('authenticated');
