@@ -1,10 +1,10 @@
 #!/bin/sh
-. "$(dirname "$0")/husky.sh"
+. "$(dirname "$0")/_/husky.sh"
 
 branch=$(git rev-parse --abbrev-ref HEAD)
 
 if [ "$branch" = "main" ]; then
-  echo "You're pushing to 'main'. Running checks...."
+  echo "You're pushing to 'main'. Running checks..."
 
   echo "Running yarn prettier..."
   yarn prettier --check .
