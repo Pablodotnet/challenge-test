@@ -5,7 +5,9 @@ const registerRoute = '/auth/register';
 test('has title', async ({ page }) => {
   await page.goto(registerRoute);
 
-  expect(await page.getByTestId('auth-title').innerText()).toContain('Crear Cuenta');
+  expect(await page.getByTestId('auth-title').innerText()).toContain(
+    'Crear Cuenta'
+  );
 });
 
 test('has toggle theme button', async ({ page }) => {

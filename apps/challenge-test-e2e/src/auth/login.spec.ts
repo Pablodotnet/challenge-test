@@ -37,10 +37,14 @@ test('has create account buttons', async ({ page }) => {
   await page.goto(loginRoute);
 
   expect(page.getByTestId('create-account-btn')).toBeDefined();
-  await expect(page.getByTestId('create-account-btn')).toHaveText('Crear cuenta');
+  await expect(page.getByTestId('create-account-btn')).toHaveText(
+    'Crear cuenta'
+  );
 });
 
-test('login with valid credentials redirects to dashboard', async ({ page }) => {
+test('login with valid credentials redirects to dashboard', async ({
+  page,
+}) => {
   await page.goto(loginRoute);
 
   await page
@@ -48,7 +52,10 @@ test('login with valid credentials redirects to dashboard', async ({ page }) => 
     .locator('input')
     .fill(testAccount);
 
-  await page.getByTestId('login-password-input').locator('input').fill(testPassword);
+  await page
+    .getByTestId('login-password-input')
+    .locator('input')
+    .fill(testPassword);
 
   await page.getByTestId('login-button').click();
 
@@ -57,4 +64,3 @@ test('login with valid credentials redirects to dashboard', async ({ page }) => 
     'Challenge Test App'
   );
 });
-

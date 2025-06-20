@@ -27,7 +27,10 @@ const formValidations = {
     (value: string) => value.length >= 6,
     'El Password necesita 6 o más carácteres.',
   ],
-  displayName: [(value: string) => value.length >= 1, 'El Nombre es requerido.'],
+  displayName: [
+    (value: string) => value.length >= 1,
+    'El Nombre es requerido.',
+  ],
 };
 
 export const RegisterPage = () => {
