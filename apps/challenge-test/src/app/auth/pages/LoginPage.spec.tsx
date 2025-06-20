@@ -44,7 +44,7 @@ describe('LoginPage', () => {
       theme: {
         isDarkMode: false,
       },
-      ...storeState
+      ...storeState,
     });
     store.dispatch = mockDispatch;
 
