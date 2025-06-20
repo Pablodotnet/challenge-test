@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build": "nx run challenge-test:build",
+    "e2e": "nx e2e challenge-test-e2e",
     "lint": "nx run challenge-test:lint",
     "lint-ci": "nx run challenge-test:lint --ci",
     "test": "nx run challenge-test:test",
