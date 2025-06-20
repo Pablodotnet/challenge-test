@@ -59,7 +59,10 @@ export const ConversationsPage = () => {
   const skeletonRows = Array.from({ length: 4 });
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer
+      component={Paper}
+      data-testid="conversaciones-page-container"
+    >
       <Table sx={{ minWidth: 650 }} aria-label="conversations table">
         <TableHead>
           <TableRow>

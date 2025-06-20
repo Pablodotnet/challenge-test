@@ -45,7 +45,7 @@ export const NavBar = React.forwardRef<HTMLDivElement, NavBarProps>(
             </IconButton>
           )}
           <Grid container direction="row" justifyContent="flex-start">
-            <Typography variant="h6" noWrap>
+            <Typography variant="h6" noWrap data-testid="app-dashboard-title">
               Challenge Test App
             </Typography>
           </Grid>

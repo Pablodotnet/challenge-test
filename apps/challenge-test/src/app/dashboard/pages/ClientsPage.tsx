@@ -56,11 +56,11 @@ export const ClientsPage = () => {
   }, [currentUser?.uid]);
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} data-testid="clients-page-container">
       <Grid container spacing={2}>
         <Grid item xs={12} md={7}>
           <Paper elevation={3} sx={{ padding: 2, marginBottom: 2 }}>
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="h6" gutterBottom data-testid="clients-list">
               Lista de Clientes
             </Typography>
             <List sx={{ width: '100%' }}>
