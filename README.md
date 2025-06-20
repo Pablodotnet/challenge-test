@@ -50,23 +50,23 @@
 
 - Displays the login form and the Google Sign In button
 
-![Login Light Theme](/screenshots/login-light.png?raw=true "Login Light Theme")
+![Login Light Theme](/screenshots/login-light.png?raw=true 'Login Light Theme')
 
-![Login Dark Theme](/screenshots/login-dark.png?raw=true "Login Dark theme")
+![Login Dark Theme](/screenshots/login-dark.png?raw=true 'Login Dark theme')
 
 #### /auth/register
 
 - Displays the register form
 
-![Register Light Theme](/screenshots/register-light.png?raw=true "Register Light Theme")
+![Register Light Theme](/screenshots/register-light.png?raw=true 'Register Light Theme')
 
-![Register Dark Theme](/screenshots/register-dark.png?raw=true "Register Dark theme")
+![Register Dark Theme](/screenshots/register-dark.png?raw=true 'Register Dark theme')
 
 #### /
 
 - Just displays a dashboard with couple of counters that redirects you to Clientes or Conversaciones pages.
 
-![Dashboard Page](/screenshots/dashboard.png?raw=true "Dashboard Page")
+![Dashboard Page](/screenshots/dashboard.png?raw=true 'Dashboard Page')
 
 #### /clientes
 
@@ -76,7 +76,7 @@
 
 **NOTE:** Mocked clients are just showable, explanation on next block.
 
-![Clientes Page](/screenshots/clientes.png?raw=true "Clientes Page")
+![Clientes Page](/screenshots/clientes.png?raw=true 'Clientes Page')
 
 #### /clientes/:clientId
 
@@ -89,16 +89,16 @@
 
 **NOTE:** Conversacion and Chat pages are different behavior, explanation on next blocks.
 
-![Cliente Mock Page](/screenshots/cliente-mock.png?raw=true "Cliente Mock Page")
+![Cliente Mock Page](/screenshots/cliente-mock.png?raw=true 'Cliente Mock Page')
 
-![Cliente Real Page](/screenshots/cliente-real.png?raw=true "Cliente Real Page")
+![Cliente Real Page](/screenshots/cliente-real.png?raw=true 'Cliente Real Page')
 
 #### /conversaciones
 
 - It displays a table with the data of the received conversations on the email of the Mocked Clients
 - Clicking any element of this list takes you to the details of the mocked conversation, page `/conversacion/:conversationId`
 
-![Conversaciones Page](/screenshots/conversaciones.png?raw=true "Conversaciones Page")
+![Conversaciones Page](/screenshots/conversaciones.png?raw=true 'Conversaciones Page')
 
 #### /conversaciones/:conversationId
 
@@ -106,7 +106,7 @@
 
 **NOTE**: Conversaciones and Conversacion page were just created to displayed the received data of the email, the real time feature example is in chat page.
 
-![Conversacion Page](/screenshots/conversacion.png?raw=true "Conversacion Page")
+![Conversacion Page](/screenshots/conversacion.png?raw=true 'Conversacion Page')
 
 #### /chat/:chatId
 
@@ -114,8 +114,7 @@
 - You'll find the details of the chat and below the input to write your first message
 - The other user will receive the message at the moment you send it, try this with another registered colleague to confirm it's working.
 
-![Chat Page](/screenshots/chat.png?raw=true "Chat Page")
-
+![Chat Page](/screenshots/chat.png?raw=true 'Chat Page')
 
 ## CI/CD
 
