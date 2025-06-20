@@ -175,7 +175,7 @@ export const ClientsPage = () => {
                 <>
                   <Avatar sx={{ width: 80, height: 80 }}></Avatar>
                   <Typography variant="h6">
-                    {clients.length + users.length}{' '}
+                    {clients.length}{' '}
                     {clients.length === 1 ? 'cliente' : 'clientes'}
                   </Typography>
                 </>
