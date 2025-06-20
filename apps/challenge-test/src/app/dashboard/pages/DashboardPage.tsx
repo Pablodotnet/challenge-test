@@ -41,7 +41,11 @@ export const DashboardPage = () => {
                   <Skeleton variant="text" width="60%" height={30} />
                 </>
               ) : (
-                <>
+                <Box
+                  role="button"
+                  className="cursor-pointer"
+                  onClick={() => handleClickCard('/clientes')}
+                >
                   <Box
                     sx={{
                       width: 80,
@@ -51,9 +55,6 @@ export const DashboardPage = () => {
                       alignItems: 'center',
                       justifyContent: 'center',
                     }}
-                    onClick={() => handleClickCard('/clientes')}
-                    role="button"
-                    className="cursor-pointer"
                   >
                     <AccountCircleIcon sx={{ fontSize: 90 }} />
                   </Box>
@@ -61,7 +62,7 @@ export const DashboardPage = () => {
                     {clients.length}{' '}
                     {clients.length === 1 ? 'cliente' : 'clientes'}
                   </Typography>
-                </>
+                </Box>
               )}
             </Box>
           </Paper>
@@ -85,7 +86,11 @@ export const DashboardPage = () => {
                   <Skeleton variant="text" width="60%" height={30} />
                 </>
               ) : (
-                <>
+                <Box
+                  onClick={() => handleClickCard('/conversaciones')}
+                  role="button"
+                  className="cursor-pointer"
+                >
                   <Box
                     sx={{
                       width: 80,
@@ -95,9 +100,6 @@ export const DashboardPage = () => {
                       alignItems: 'center',
                       justifyContent: 'center',
                     }}
-                    onClick={() => handleClickCard('/conversaciones')}
-                    role="button"
-                    className="cursor-pointer"
                   >
                     <QuestionAnswerIcon sx={{ fontSize: 80 }} />
                   </Box>
@@ -107,7 +109,7 @@ export const DashboardPage = () => {
                       ? 'conversación'
                       : 'conversaciones'}
                   </Typography>
-                </>
+                </Box>
               )}
             </Box>
           </Paper>
