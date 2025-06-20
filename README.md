@@ -46,6 +46,7 @@
 ## Pages
 
 #### /
+
 - Just displays a dashboard with couple of counters that redirects you to Clientes or Conversaciones pages.
 
 #### /clientes
@@ -83,7 +84,6 @@
 - When is a verified client and you click Start Chat, it creates a real time chat with the client
 - You'll find the details of the chat and below the input to write your first message
 - The other user will receive the message at the moment you send it, try this with another registered colleague to confirm it's working.
-
 
 ## Useful Commands
 
@@ -124,11 +124,13 @@ yarn e2e
 ```
 
 ## CI/CD
+
 This process is done by Github Actions and deployed on Azure Static Web App service.
 
 The Github Action can be found on `.github/workflows`, this action runs when the push is in `main` branch or in pull-requests.
 
 The steps the action do are:
+
 - Install dependencies
 - Run Lint
 - Run Tests
@@ -138,6 +140,7 @@ The steps the action do are:
 - Build app and deploy with static-web-apps-deploy (this step runs yarn build internally)
 
 ## Firebase
+
 To have a backend implementation for this challenge I decided to use Firebase as it's simple and fast to implement and understand, nice to build a MVP.
 Firebase Auth is used to have Email/Password and Google Sign In authentication.
 Firebase Database is used as storage and using the real time database feature it has it is used for the chat functionality.
