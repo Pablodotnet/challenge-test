@@ -24,6 +24,7 @@
 
 ## Features
 
+- Dark/Light Theme
 - Firebase Auth with Email/Password and Google Sign In
 - State management with Redux
 - Firebase Database for users and real time chat
